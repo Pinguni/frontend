@@ -1,19 +1,25 @@
-// Body
-$body-bg: #f8fafc;
-
 // Typography
-$font-family-sans-serif: 'Nunito', sans-serif;
-$font-size-base: 0.9rem;
-$line-height-base: 1.6;
+$font-body: 'Noto Sans', sans-serif;
+$font-display: 'Noto Sans', sans-serif;
 
 // Colors
-$blue: #3490dc;
-$indigo: #6574cd;
-$purple: #9561e2;
-$pink: #f66d9b;
-$red: #e3342f;
-$orange: #f6993f;
-$yellow: #ffed4a;
-$green: #38c172;
-$teal: #4dc0b5;
-$cyan: #6cb2eb;
+$dark-1: #2C0735;
+$dark-2: #150578;
+$medium: #192BC2;
+$light-1: #888AFB;
+$light-2: #C28EF6;
+
+// Screen Sizes
+$sm: 640px;
+$md: 768px;
+$lg: 1024px;
+$xl: 1280px;
+
+/*
+========================================
+Root
+========================================
+*/
+:root {
+    font-size: 16px;
+}

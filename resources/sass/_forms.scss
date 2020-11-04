@@ -1,0 +1,41 @@
+/*
+========================================
+Forms
+========================================  */
+
+form {
+    margin: 0 auto;
+    @apply grid grid-rows-1;
+    
+    button[type=submit] {
+        @apply mt-3 place-self-center;
+    }
+    &.narrow {
+        max-width: 300px;
+        button[type=submit] {
+            @apply place-self-end;
+        }
+    }
+}
+label,
+input[type=email],
+input[type=password],
+input[type=text] {
+    @apply w-full block;
+    max-width: 300px;
+    margin: 0 auto;
+}
+label {
+    @apply font-bold text-dark-2;
+}
+input[type=email],
+input[type=password],
+input[type=text] {
+    @apply py-2 px-3 rounded-lg border-2 border-light-1 text-dark-2 mt-1 mb-4;
+    &:focus {
+        @apply border-dark-1 outline-none;
+    }
+}
+::placeholder {
+    @apply text-light-1;
+}

@@ -1,8 +1,13 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans');
 
-// Variables
-@import 'variables';
+// Tailwind
+@tailwind base;
+@tailwind components;
 
-// Bootstrap
-@import '~bootstrap/scss/bootstrap';
+@import 'variables';           // Variables
+@import 'typography';          // Typography
+@import 'base';                // Base Stuff
+
+@import 'forms';               // Forms
+@import 'buttons';             // Buttons

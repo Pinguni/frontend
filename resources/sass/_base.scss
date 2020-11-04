@@ -1,0 +1,63 @@
+@import 'variables';           // Variables
+
+/*
+========================================
+Main
+========================================  */
+
+main {
+    margin: 0 auto;
+
+    // Moderate Width
+    &.moderate {
+        @apply w-full p-4;
+    }
+    // Narrowest Width
+    &.narrow {
+
+    }
+}
+@media (min-width: $sm) {
+    main {
+        // Moderate Width
+        &.moderate {
+            @apply w-11/12;
+        }
+        // Narrowest Width
+        &.narrow {
+            @apply w-11/12;
+        }
+    }
+}
+@media (min-width: $md) {
+    main {
+        // Moderate Width
+        &.moderate {
+            @apply w-10/12;
+        }
+        // Narrowest Width
+        &.narrow {
+            @apply w-9/12;
+        }
+    }
+}
+@media (min-width: $lg) {
+    main {
+        // Moderate Width
+        &.moderate {
+            @apply w-9/12;
+        }
+        // Narrowest Width
+        &.narrow {
+            @apply w-8/12;
+        }
+    }
+}
+@media (min-width: $xl) {
+    main {
+        // Narrowest Width
+        &.narrow {
+            @apply w-7/12;
+        }
+    }
+}

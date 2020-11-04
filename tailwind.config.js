@@ -23,6 +23,16 @@ module.exports = {
       black: '#000',
       white: '#fff',
 
+      dark: {
+        1: '#2C0735',
+        2: '#150578',
+      },
+      medium: '#192BC2',
+      light: {
+        1: '#888AFB',
+        2: '#C28EF6',
+      },
+
       gray: {
         100: '#f7fafc',
         200: '#edf2f7',
