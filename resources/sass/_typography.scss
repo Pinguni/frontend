@@ -10,7 +10,7 @@ Typography
 }
 
 h1, h2, h3, h4 {
-    @apply font-bold;
+    @apply font-bold mb-6;
 }
 h1 {
     @apply text-5xl;
