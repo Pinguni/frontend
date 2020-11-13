@@ -7,8 +7,8 @@
 
         <h3>Login</h3>
 
-        <label for="email">{{ __('E-Mail Address') }}</label>
-        <input id="email" type="email" class="@error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+        <label for="email">{{ __('Email') }}</label>
+        <input id="email" type="email" class="@error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Email" autofocus>
         @error('email')
             <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>
@@ -16,17 +16,19 @@
         @enderror
 
         <label for="password">{{ __('Password') }}</label>
-        <input id="password" type="password" class="@error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+        <input id="password" type="password" class="@error('password') is-invalid @enderror" name="password" required autocomplete="current-password" placeholder="Password">
         @error('password')
             <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>
             </span>
         @enderror
 
-        <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-        <label class="form-check-label" for="remember">
-            {{ __('Remember Me') }}
-        </label>
+        <div class="checkbox">
+            <input type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+            <label for="remember">
+                {{ __('Remember Me') }}
+            </label>
+        </div>
 
         <button type="submit" class="dark">
             {{ __('Login') }}

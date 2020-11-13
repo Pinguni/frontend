@@ -7,6 +7,8 @@ Typography
 */
 * {
     font-family: $font-body;
+    line-height: 1.5;
+    @apply tracking-wide;
 }
 
 h1, h2, h3, h4 {
@@ -26,5 +28,6 @@ h4 {
 }
 
 p {
+    @apply tracking-wide;
     line-height: 26;
 }
