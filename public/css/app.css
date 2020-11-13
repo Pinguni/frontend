@@ -684,6 +684,17 @@ Root
 
 /*
 ========================================
+Body
+========================================  */
+
+body {
+  --bg-opacity: 1;
+  background-color: #f7fafc;
+  background-color: rgba(247, 250, 252, var(--bg-opacity));
+}
+
+/*
+========================================
 Main
 ========================================  */
 
@@ -694,6 +705,11 @@ main {
 main.moderate {
   width: 100%;
   padding: 1rem;
+  margin-top: 2rem;
+}
+
+main.narrow {
+  margin-top: 2rem;
 }
 
 @media (min-width: 640px) {
@@ -709,12 +725,12 @@ main.moderate {
 @media (min-width: 768px) {
   main.moderate {
     width: 83.333333%;
-    margin-top: 2rem;
+    margin-top: 3rem;
   }
 
   main.narrow {
     width: 75%;
-    margin-top: 2rem;
+    margin-top: 3rem;
   }
 }
 
@@ -883,28 +899,38 @@ Main Navigation
 
 #nav-main {
   display: flex;
+  align-items: center;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
   width: 100%;
+  height: 4rem;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
   --bg-opacity: 1;
   background-color: #fff;
   background-color: rgba(255, 255, 255, var(--bg-opacity));
 }
 
-#nav-main ul#nav-left {
+#nav-main #nav-left {
   margin-left: auto;
-}
-
-#nav-main ul#nav-right {
-  margin-right: auto;
-  right: 0;
+  font-weight: 700;
+  flex: 1 1 auto;
   display: flex;
 }
 
-#nav-main ul#nav-right li {
+#nav-main #nav-right {
+  right: 0;
+  flex: 1 1 auto;
+  width: 100%;
+}
+
+#nav-main #nav-right ul {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+#nav-main #nav-right ul li {
   margin-left: 0.75rem;
 }
 

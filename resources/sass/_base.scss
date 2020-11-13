@@ -2,19 +2,27 @@
 
 /*
 ========================================
+Body
+========================================  */
+body {
+    @apply bg-gray-100;
+}
+
+
+/*
+========================================
 Main
 ========================================  */
-
 main {
     margin: 0 auto;
 
     // Moderate Width
     &.moderate {
-        @apply w-full p-4;
+        @apply w-full p-4 mt-8;
     }
     // Narrowest Width
     &.narrow {
-
+        @apply mt-8;
     }
 }
 @media (min-width: $sm) {
@@ -33,11 +41,11 @@ main {
     main {
         // Moderate Width
         &.moderate {
-            @apply w-10/12;
+            @apply w-10/12 mt-12;
         }
         // Narrowest Width
         &.narrow {
-            @apply w-9/12;
+            @apply w-9/12 mt-12;
         }
     }
 }
