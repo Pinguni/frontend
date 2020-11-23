@@ -1,0 +1,46 @@
+@import 'variables';           // Variables
+
+
+/*
+========================================
+Cards
+======================================== */
+.card {
+    @apply shadow bg-white;
+    .card-image {
+        @apply w-full h-32 overflow-hidden;
+        img {
+            @apply object-cover;
+        }
+    }
+    .card-content {
+        @apply py-4 px-6 w-full;
+        h5 {
+            @apply font-bold;
+        }
+    }
+}
+
+
+/*
+========================================
+Course Grids
+======================================== */
+.course-grid-wide {
+    @apply grid grid-cols-4 gap-4;
+}
+@media (max-width: $lg) {
+    .course-grid-wide {
+        @apply grid-cols-3;
+    }   
+}
+@media (max-width: $md) {
+    .course-grid-wide {
+        @apply grid-cols-2;
+    }   
+}
+@media (max-width: $sm) {
+    .course-grid-wide {
+        @apply grid-cols-1;
+    }   
+}

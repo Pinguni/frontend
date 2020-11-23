@@ -3,22 +3,21 @@
 /*
 ========================================
 Typography
-========================================
-*/
+======================================== */
 * {
     font-family: $font-body;
     line-height: 1.5;
     @apply tracking-wide;
 }
 
-h1, h2, h3, h4 {
-    @apply font-bold mb-6;
+h1, h2, h3, h4, h5 {
+    @apply font-bold;
 }
 h1 {
-    @apply text-5xl;
+    @apply text-5xl mb-6;
 }
 h2 {
-    @apply text-4xl;
+    @apply text-4xl mb-6;
 }
 h3 {
     @apply text-3xl;
@@ -26,8 +25,13 @@ h3 {
 h4 {
     @apply text-2xl;
 }
+h5 {
+    @apply text-xl mb-2;
+}
 
 p {
-    @apply tracking-wide;
-    line-height: 26;
+    @apply tracking-wide leading-loose;
+}
+.eyebrow {
+    @apply mb-1 text-dark-1 text-sm font-bold uppercase;
 }

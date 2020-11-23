@@ -16,22 +16,22 @@ Main
 main {
     margin: 0 auto;
 
-    // Moderate Width
-    &.moderate {
-        @apply w-full p-4 mt-8;
-    }
-    // Narrowest Width
+    // Wide
+    // Moderate
+    // Narrow
+    &.wide,
+    &.moderate,
     &.narrow {
-        @apply mt-8;
+        @apply w-full p-4 mt-8;
     }
 }
 @media (min-width: $sm) {
     main {
-        // Moderate Width
-        &.moderate {
-            @apply w-11/12;
-        }
-        // Narrowest Width
+        // Wide
+        // Moderate
+        // Narrow
+        &.wide,
+        &.moderate,
         &.narrow {
             @apply w-11/12;
         }
