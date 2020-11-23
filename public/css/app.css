@@ -650,7 +650,7 @@ h1, h2, h3, h4, h5 {
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 2.25rem;
   margin-bottom: 1.5rem;
 }
 
@@ -994,11 +994,23 @@ Main Navigation
   background-color: rgba(255, 255, 255, var(--bg-opacity));
 }
 
+#nav-main ul {
+  display: flex;
+}
+
+#nav-main ul li {
+  margin-left: 0.75rem;
+}
+
 #nav-main #nav-left {
   margin-left: auto;
   font-weight: 700;
   flex: 1 1 auto;
   display: flex;
+}
+
+#nav-main #nav-left li {
+  margin-right: 0.75rem;
 }
 
 #nav-main #nav-right {
@@ -1008,12 +1020,7 @@ Main Navigation
 }
 
 #nav-main #nav-right ul {
-  display: flex;
   flex-direction: row-reverse;
-}
-
-#nav-main #nav-right ul li {
-  margin-left: 0.75rem;
 }
 
 @media (min-width: 640px){

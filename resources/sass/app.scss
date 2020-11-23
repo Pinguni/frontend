@@ -22,16 +22,22 @@ Main Navigation
 #nav-main {
     @apply flex items-center py-2 px-8 w-full h-16 shadow bg-white;
 
+    ul {
+        @apply flex;
+        li {
+            @apply ml-3;
+        }
+    }
     #nav-left {
         @apply ml-auto font-bold flex-auto flex;
+        li {
+            @apply mr-3;
+        }
     }
     #nav-right {
         @apply right-0 flex-auto w-full;
         ul {
-            @apply flex flex-row-reverse;
-            li {
-                @apply ml-3;
-            }
+            @apply flex-row-reverse;
         }
     }
 }

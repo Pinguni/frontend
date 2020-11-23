@@ -24,6 +24,6 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::prefix('/courses')->group(function() {
-    Route::get('/', [CoursesController::class, 'index']);
+    Route::get('/', [CoursesController::class, 'index'])->name('courses-all');
     Route::get('/{id}/{permalink}', [CoursesController::class, 'course']);
 });
