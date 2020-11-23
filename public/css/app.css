@@ -1004,9 +1004,12 @@ Main Navigation
 
 #nav-main #nav-left {
   margin-left: auto;
-  font-weight: 700;
   flex: 1 1 auto;
   display: flex;
+}
+
+#nav-main #nav-left > a {
+  font-weight: 700;
 }
 
 #nav-main #nav-left li {

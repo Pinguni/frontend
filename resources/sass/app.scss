@@ -29,7 +29,10 @@ Main Navigation
         }
     }
     #nav-left {
-        @apply ml-auto font-bold flex-auto flex;
+        @apply ml-auto flex-auto flex;
+        & > a {
+            @apply font-bold;
+        }
         li {
             @apply mr-3;
         }
