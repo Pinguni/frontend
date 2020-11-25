@@ -70,6 +70,10 @@
         </nav>
 
         @yield('content')
+
+        <footer>
+            <p>Copyright &copy; 2021 <a href="https://cathzchen.com" target="_blank">Catherine Chen</a>.  All Rights Reserved.</p>
+        </footer>
     </div>
 </body>
 </html>

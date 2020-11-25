@@ -1066,6 +1066,27 @@ Main Navigation
   flex-direction: row-reverse;
 }
 
+/*
+========================================
+Footer
+========================================
+*/
+
+footer {
+  --bg-opacity: 1;
+  background-color: #150578;
+  background-color: rgba(21, 5, 120, var(--bg-opacity));
+  --text-opacity: 1;
+  color: #fff;
+  color: rgba(255, 255, 255, var(--text-opacity));
+  text-align: center;
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin-top: 5rem;
+}
+
 @media (min-width: 640px){
   .sm\:container{
     width: 100%;
