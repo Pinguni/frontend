@@ -687,6 +687,10 @@ p {
   text-transform: uppercase;
 }
 
+h1.resource-title {
+  margin-top: 2rem;
+}
+
 /*
 ========================================
 Root
@@ -880,6 +884,7 @@ button {
   padding-bottom: 0.5rem;
   padding-left: 0.75rem;
   padding-right: 0.75rem;
+  margin-top: 0.75rem;
 }
 
 button:focus {
@@ -920,15 +925,28 @@ Cards
   background-color: rgba(255, 255, 255, var(--bg-opacity));
 }
 
-.card .card-image {
+.card.resource-card:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.card .card-image,
+.card .card-image-banner {
   width: 100%;
-  height: 8rem;
   overflow: hidden;
 }
 
-.card .card-image img {
+.card .card-image img,
+.card .card-image-banner img {
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.card .card-image {
+  height: 8rem;
+}
+
+.card .card-image-banner {
+  height: 16rem;
 }
 
 .card .card-content {
@@ -970,6 +988,28 @@ Course Grids
 @media (max-width: 640px) {
   .course-grid-wide {
     grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}
+
+.course-details-sidebar {
+  width: 33.333333%;
+  position: absolute;
+  right: 0;
+  margin-top: -4rem;
+  margin-right: 6rem;
+  min-height: 200px;
+  max-width: 300px;
+}
+
+.course-details-sidebar button {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .course-details-sidebar {
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
   }
 }
 

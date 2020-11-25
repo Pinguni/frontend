@@ -7,11 +7,21 @@ Cards
 ======================================== */
 .card {
     @apply shadow bg-white;
-    .card-image {
-        @apply w-full h-32 overflow-hidden;
+    &.resource-card:hover {
+        @apply shadow-lg;
+    }
+    .card-image,
+    .card-image-banner {
+        @apply w-full overflow-hidden;
         img {
             @apply object-cover;
         }
+    }
+    .card-image {
+        @apply h-32;
+    }
+    .card-image-banner {
+        @apply h-64;
     }
     .card-content {
         @apply py-4 px-6 w-full;

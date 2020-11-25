@@ -1,5 +1,5 @@
 <a href='{{ url("/courses/$course->id/$course->title") }}'>
-    <div class="card">
+    <div class="card resource-card">
         <div class="card-image">
             <img src="{{ $course->card_image }}" />
         </div>

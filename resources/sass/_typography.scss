@@ -35,3 +35,7 @@ p {
 .eyebrow {
     @apply mb-1 text-dark-1 text-sm font-bold uppercase;
 }
+
+h1.resource-title {
+    @apply mt-8;
+}
