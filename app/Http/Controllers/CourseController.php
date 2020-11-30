@@ -14,7 +14,11 @@ class CourseController extends Controller
      */
     public function index()
     {
-        //
+        $courses = Course::all();
+
+        return view('courses.index', [
+            'courses' => $courses,
+        ]);
     }
 
     /**
@@ -57,7 +61,10 @@ class CourseController extends Controller
      */
     public function edit(Course $course)
     {
-        //
+        return view('courses.edit', [
+            'course' => $course,
+            'action' => 'courses.update',
+        ]);
     }
 
     /**
@@ -69,7 +76,20 @@ class CourseController extends Controller
      */
     public function update(Request $request, Course $course)
     {
-        //
+        $course->title       = $request->title;
+        $course->slug        = $request->slug;
+        $course->card_image  = $request->card_image;
+        $course->cover_image = $request->cover_image;
+        $course->excerpt     = $request->excerpt;
+        $course->description = $request->description;
+        $course->type        = $request->type;
+        $course->status      = $request->status;
+        $course->save();
+
+        return redirect()->route('courses.show', [
+            'id' => $course->id,
+            'permalink' => $course->slug,
+        ]);
     }
 
     /**

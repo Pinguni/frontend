@@ -9,20 +9,6 @@ use App\Models\Course;
 class CoursesController extends Controller
 {
     /**
-     * Show all courses.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
-    public function index()
-    {
-        $courses = Course::all();
-
-        return view('courses.index', [
-            'courses' => $courses,
-        ]);
-    }
-
-    /**
      * Show specific course page.
      *
      * @return \Illuminate\Contracts\Support\Renderable
@@ -33,6 +19,22 @@ class CoursesController extends Controller
 
         return view('courses.course', [
             'course' => $course,
+        ]);
+    }
+
+    /**
+     * Show edit content page.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function edit($id, $type, $action)
+    {
+        $course = Course::find($id);
+
+        return view('courses.edit', [
+            'course' => $course,
+            'id' => $id,
+            'type' => $type,
         ]);
     }
 }

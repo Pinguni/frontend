@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\CourseController;
 use App\Http\Controllers\CoursesController;
 
 /*
@@ -24,6 +25,9 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::prefix('/courses')->group(function() {
-    Route::get('/', [CoursesController::class, 'index'])->name('courses-all');
-    Route::get('/{id}/{permalink}', [CoursesController::class, 'course']);
+    Route::get('/view/{id}/{permalink}', [CoursesController::class, 'course'])->name('courses.show');
+    //Route::get('/{id}/edit/{field}', [CourseController::class, 'edit'])->name('courses.edit');
 });
+Route::resource('courses', CourseController::class)->except([
+    'show'//, 'edit'
+]);

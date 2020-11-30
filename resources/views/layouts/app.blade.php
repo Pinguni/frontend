@@ -32,7 +32,7 @@
                         <a href="{{ url('/') }}">Guides</a>
                     </li>
                     <li>
-                        <a href="{{ route('courses-all') }}">Courses</a>
+                        <a href="{{ route('courses.index') }}">Courses</a>
                     </li>
                 </ul>
             </div>

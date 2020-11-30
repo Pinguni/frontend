@@ -22,10 +22,14 @@
         </div>
     </aside>
 
+    <button class="dark" onclick="window.location='{{ route('courses.edit', ['course' => $course]) }}'">
+        Edit
+    </button>
+
     <h1 class="resource-title">{{ $course->title }}</h1>
 
     <section class="course-description">
-        {{ $course->description }}
+        {!! $course->description !!}
     </section>
 </main>
 @endsection

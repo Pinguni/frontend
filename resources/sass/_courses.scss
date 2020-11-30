@@ -22,6 +22,7 @@ Course Description
 @screen md {
     .course-description {
         min-height: 400px;
+        width: calc(100vw - 400px);
     }
 }
 
@@ -34,7 +35,7 @@ Course Details Sidebar
     @apply w-full relative shadow-2xl;
     margin: 0 auto;
     min-height: 200px;
-    max-width: 300px;
+    max-width: 350px;
     .card-image, img {
         @apply h-48;
     }

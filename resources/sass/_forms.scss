@@ -16,10 +16,20 @@ form {
     button[type=submit] {
         @apply my-3 place-self-center;
     }
+
     &.narrow {
         max-width: 300px;
         button[type=submit] {
             @apply place-self-end;
+        }
+    }
+    &.form-laraberg {
+        @apply p-0 shadow-none bg-none;
+        p, a {
+            @apply text-left;
+        }
+        button[type=submit] {
+            @apply place-self-end mr-4;
         }
     }
 

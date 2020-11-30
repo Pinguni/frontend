@@ -14,7 +14,7 @@ Cards
         }
     }
     .card-image {
-        @apply h-32 w-full overflow-hidden;
+        @apply h-40 w-full overflow-hidden;
         img {
             @apply object-cover;
         }

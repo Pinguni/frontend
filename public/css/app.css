@@ -800,6 +800,21 @@ form.narrow button[type=submit] {
   place-self: end;
 }
 
+form.form-laraberg {
+  padding: 0;
+  box-shadow: none;
+  background-image: none;
+}
+
+form.form-laraberg p, form.form-laraberg a {
+  text-align: left;
+}
+
+form.form-laraberg button[type=submit] {
+  place-self: end;
+  margin-right: 1rem;
+}
+
 form .checkbox {
   display: flex;
 }
@@ -877,7 +892,8 @@ input[type=text]:focus {
 Buttons
 ========================================  */
 
-button {
+button,
+.button {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   padding-left: 0.75rem;
@@ -885,12 +901,14 @@ button {
   margin-top: 0.75rem;
 }
 
-button:focus {
+button:focus,
+.button:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
 }
 
-button.dark {
+button.dark,
+.button.dark {
   font-weight: 700;
   --text-opacity: 1;
   color: #fff;
@@ -940,7 +958,7 @@ Cards
 }
 
 .card .card-image {
-  height: 8rem;
+  height: 10rem;
   width: 100%;
   overflow: hidden;
 }
@@ -1026,6 +1044,7 @@ Course Description
 @media (min-width: 768px) {
   .course-description {
     min-height: 400px;
+    width: calc(100vw - 400px);
   }
 }
 
@@ -1040,7 +1059,7 @@ Course Details Sidebar
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
   margin: 0 auto;
   min-height: 200px;
-  max-width: 300px;
+  max-width: 350px;
 }
 
 .course-details-sidebar .card-image, .course-details-sidebar img {
