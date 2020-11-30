@@ -1,4 +1,4 @@
-<a href='{{ url("/courses/$course->id/$course->title") }}'>
+<a href='{{ url("/courses/$course->id/$course->slug") }}'>
     <div class="card resource-card">
         <div class="card-image">
             <img src="{{ $course->card_image }}" />
