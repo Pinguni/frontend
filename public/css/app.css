@@ -621,7 +621,7 @@ Root
 */
 
 :root {
-  font-size: 16px;
+  font-size: 15px;
 }
 
 /*
@@ -631,7 +631,7 @@ Root
 */
 
 :root {
-  font-size: 16px;
+  font-size: 15px;
 }
 
 /*
@@ -698,7 +698,7 @@ Root
 */
 
 :root {
-  font-size: 16px;
+  font-size: 15px;
 }
 
 /*
@@ -707,9 +707,7 @@ Body
 ========================================  */
 
 body {
-  --bg-opacity: 1;
-  background-color: #f7fafc;
-  background-color: rgba(247, 250, 252, var(--bg-opacity));
+  background: #fafbfd;
 }
 
 /*
@@ -897,7 +895,7 @@ button.dark {
   --text-opacity: 1;
   color: #fff;
   color: rgba(255, 255, 255, var(--text-opacity));
-  border-radius: 0.25rem;
+  border-radius: 9999px;
   --bg-opacity: 1;
   background-color: #150578;
   background-color: rgba(21, 5, 120, var(--bg-opacity));
@@ -910,7 +908,7 @@ Root
 */
 
 :root {
-  font-size: 16px;
+  font-size: 15px;
 }
 
 /*
@@ -919,14 +917,23 @@ Cards
 ======================================== */
 
 .card {
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  border-radius: 0.25rem;
+  border-width: 1px;
+  --border-opacity: 1;
+  border-color: #e2e8f0;
+  border-color: rgba(226, 232, 240, var(--border-opacity));
   --bg-opacity: 1;
   background-color: #fff;
   background-color: rgba(255, 255, 255, var(--bg-opacity));
+  transition-duration: 500ms;
+  overflow: hidden;
 }
 
 .card.resource-card:hover {
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --border-opacity: 1;
+  border-color: #fff;
+  border-color: rgba(255, 255, 255, var(--border-opacity));
 }
 
 .card .card-image,
@@ -1028,7 +1035,10 @@ Main Navigation
   padding-right: 2rem;
   width: 100%;
   height: 4rem;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  border-bottom-width: 1px;
+  --border-opacity: 1;
+  border-color: #e2e8f0;
+  border-color: rgba(226, 232, 240, var(--border-opacity));
   --bg-opacity: 1;
   background-color: #fff;
   background-color: rgba(255, 255, 255, var(--bg-opacity));
@@ -1066,6 +1076,10 @@ Main Navigation
   flex-direction: row-reverse;
 }
 
+#nav-main #nav-right #logout-form {
+  display: none;
+}
+
 /*
 ========================================
 Footer
@@ -1074,11 +1088,8 @@ Footer
 
 footer {
   --bg-opacity: 1;
-  background-color: #150578;
-  background-color: rgba(21, 5, 120, var(--bg-opacity));
-  --text-opacity: 1;
-  color: #fff;
-  color: rgba(255, 255, 255, var(--text-opacity));
+  background-color: #fff;
+  background-color: rgba(255, 255, 255, var(--bg-opacity));
   text-align: center;
   padding-top: 2rem;
   padding-bottom: 3rem;

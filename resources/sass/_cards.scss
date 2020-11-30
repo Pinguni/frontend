@@ -6,9 +6,9 @@
 Cards
 ======================================== */
 .card {
-    @apply shadow bg-white;
+    @apply rounded border border-gray-300 bg-white duration-500 overflow-hidden;
     &.resource-card:hover {
-        @apply shadow-lg;
+        @apply shadow-xl border-white;
     }
     .card-image,
     .card-image-banner {

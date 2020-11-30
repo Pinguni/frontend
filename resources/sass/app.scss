@@ -22,7 +22,7 @@ Main Navigation
 ========================================
 */
 #nav-main {
-    @apply flex items-center py-2 px-8 w-full h-16 shadow bg-white;
+    @apply flex items-center py-2 px-8 w-full h-16 border-b border-gray-300 bg-white;
 
     ul {
         @apply flex;
@@ -44,6 +44,9 @@ Main Navigation
         ul {
             @apply flex-row-reverse;
         }
+        #logout-form {
+            @apply hidden;
+        }
     }
 }
 
@@ -54,5 +57,5 @@ Footer
 ========================================
 */
 footer {
-    @apply bg-dark-2 text-white text-center pt-8 pb-12 px-8 mt-20;
+    @apply bg-white text-center pt-8 pb-12 px-8 mt-20;
 }

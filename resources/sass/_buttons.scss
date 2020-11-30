@@ -9,6 +9,6 @@ button {
         @apply outline-none;
     }
     &.dark {
-        @apply font-bold text-white rounded bg-dark-2;
+        @apply font-bold text-white rounded-full bg-dark-2;
     }
 }
