@@ -11,6 +11,8 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    @yield('head')
 </head>
 <body>
     <div id="app">
@@ -74,6 +76,8 @@
         <footer>
             <p>Copyright &copy; 2021 <a href="https://cathzchen.com" target="_blank">Catherine Chen</a>.  All Rights Reserved.</p>
         </footer>
+
+        @yield('scripts')
     </div>
 </body>
 </html>
