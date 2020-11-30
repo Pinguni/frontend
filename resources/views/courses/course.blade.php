@@ -3,14 +3,14 @@
 @section('title', "$course->title")
 
 @section('content')
+<div class="banner">
+    <img class="banner-image" src="{{ $course->cover_image }}">
+</div>
 <main class="wide">
-    <div class="card">
-        <div class="card-image-banner">
-            <img src="{{ $course->cover_image }}">
-        </div>
-    </div>
-
     <aside class="course-details-sidebar card">
+        <div class="card-image">
+            <img src={{ $course->card_image }} />
+        </div>
         <div class="card-content">
             <p>{{ $course->excerpt }}</p>
             <p>authors</p>

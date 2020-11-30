@@ -6,22 +6,18 @@
 Cards
 ======================================== */
 .card {
-    @apply rounded border border-gray-300 bg-white duration-500 overflow-hidden;
-    &.resource-card:hover {
-        @apply shadow-xl border-white;
-    }
-    .card-image,
-    .card-image-banner {
-        @apply w-full overflow-hidden;
-        img {
-            @apply object-cover;
+    @apply rounded bg-white duration-500 overflow-hidden;
+    &.resource-card {
+        @apply border border-gray-300;
+        &:hover {
+            @apply shadow-xl border-white;
         }
     }
     .card-image {
-        @apply h-32;
-    }
-    .card-image-banner {
-        @apply h-64;
+        @apply h-32 w-full overflow-hidden;
+        img {
+            @apply object-cover;
+        }
     }
     .card-content {
         @apply py-4 px-6 w-full;
