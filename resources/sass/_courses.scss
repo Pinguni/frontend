@@ -8,6 +8,22 @@ Banner
         @apply object-cover inset-0;
     }
 }
+@screen md {
+    .banner {
+        height: 20rem;
+    }
+}
+
+
+/*
+========================================
+Course Description
+======================================== */
+@screen md {
+    .course-description {
+        min-height: 400px;
+    }
+}
 
 
 /*
@@ -15,19 +31,25 @@ Banner
 Course Details Sidebar
 ======================================== */
 .course-details-sidebar {
-    @apply w-1/3 absolute right-0 -mt-40 mr-24 shadow-2xl;
+    @apply w-full relative shadow-2xl;
+    margin: 0 auto;
     min-height: 200px;
     max-width: 300px;
-    button {
-        @apply w-full;
+    .card-image, img {
+        @apply h-48;
     }
     .card-content {
         @apply py-8 px-8;
     }
+    button {
+        @apply w-full mt-6;
+    }
 }
-@media (max-width: 768px) {
+@screen md {
     .course-details-sidebar {
-        margin: 0 auto;
-        @apply w-full relative;
+        @apply w-1/3 absolute right-0 -mt-40 mr-24;
+        .card-image, img {
+            @apply h-64;
+        }
     }
 }

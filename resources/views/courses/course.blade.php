@@ -24,7 +24,7 @@
 
     <h1 class="resource-title">{{ $course->title }}</h1>
 
-    <section>
+    <section class="course-description">
         {{ $course->description }}
     </section>
 </main>

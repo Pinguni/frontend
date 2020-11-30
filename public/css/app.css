@@ -1012,24 +1012,39 @@ Banner
   left: 0;
 }
 
+@media (min-width: 768px) {
+  .banner {
+    height: 20rem;
+  }
+}
+
+/*
+========================================
+Course Description
+======================================== */
+
+@media (min-width: 768px) {
+  .course-description {
+    min-height: 400px;
+  }
+}
+
 /*
 ========================================
 Course Details Sidebar
 ======================================== */
 
 .course-details-sidebar {
-  width: 33.333333%;
-  position: absolute;
-  right: 0;
-  margin-top: -10rem;
-  margin-right: 6rem;
+  width: 100%;
+  position: relative;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  margin: 0 auto;
   min-height: 200px;
   max-width: 300px;
 }
 
-.course-details-sidebar button {
-  width: 100%;
+.course-details-sidebar .card-image, .course-details-sidebar img {
+  height: 12rem;
 }
 
 .course-details-sidebar .card-content {
@@ -1039,11 +1054,22 @@ Course Details Sidebar
   padding-right: 2rem;
 }
 
-@media (max-width: 768px) {
+.course-details-sidebar button {
+  width: 100%;
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 768px) {
   .course-details-sidebar {
-    margin: 0 auto;
-    width: 100%;
-    position: relative;
+    width: 33.333333%;
+    position: absolute;
+    right: 0;
+    margin-top: -10rem;
+    margin-right: 6rem;
+  }
+
+  .course-details-sidebar .card-image, .course-details-sidebar img {
+    height: 16rem;
   }
 }
 
