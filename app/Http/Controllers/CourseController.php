@@ -28,7 +28,9 @@ class CourseController extends Controller
      */
     public function create()
     {
-        //
+        return view('courses.create', [
+            'action' => 'courses.store',
+        ]);
     }
 
     /**
@@ -39,7 +41,23 @@ class CourseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $course = new Course;
+
+        $course->title       = $request->title;
+        $course->slug        = $request->slug;
+        $course->card_image  = $request->card_image;
+        $course->cover_image = $request->cover_image;
+        $course->excerpt     = $request->excerpt;
+        $course->description = $request->description;
+        $course->authors     = 'cathzchen';            // temporary fill
+        $course->type        = $request->type;
+        $course->status      = $request->status;
+        $course->save();
+
+        return redirect()->route('courses.show', [
+            'id' => $course->id,
+            'permalink' => $course->slug,
+        ]);
     }
 
     /**

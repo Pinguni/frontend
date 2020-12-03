@@ -4,6 +4,10 @@
 
 @section('content')
 <main class="wide">
+    <button class="dark" onclick="window.location='{{ route('courses.create') }}'" style="margin-bottom:2rem">
+        Create
+    </button>
+
     <h1>Courses</h1>
 
     <section class="course-grid-wide">
