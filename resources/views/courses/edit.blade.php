@@ -3,11 +3,7 @@
 @section('title', "Edit $course->title")
 
 @section('head')
-    <!-- Laraberg -->
-    <script src="https://unpkg.com/react@16.8.6/umd/react.production.min.js"></script>
-    <script src="https://unpkg.com/react-dom@16.8.6/umd/react-dom.production.min.js"></script>
-    <script src="{{ asset('vendor/laraberg/js/laraberg.js') }}"></script>
-    <link rel="stylesheet" href="{{ asset('vendor/laraberg/css/laraberg.css') }}">
+    @include('layouts.laraberg')
 @endsection
 
 
