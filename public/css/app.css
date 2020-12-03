@@ -654,6 +654,10 @@ h1 {
   margin-bottom: 1.5rem;
 }
 
+h1.resource-title {
+  margin-top: 2rem;
+}
+
 h2 {
   font-size: 2.25rem;
   margin-bottom: 1.5rem;
@@ -661,6 +665,8 @@ h2 {
 
 h3 {
   font-size: 1.875rem;
+  margin-bottom: 1rem;
+  margin-top: 1.5rem;
 }
 
 h4 {
@@ -675,9 +681,10 @@ h5 {
 p {
   letter-spacing: 0.025em;
   line-height: 2;
+  margin-bottom: 0.75rem;
 }
 
-.eyebrow {
+p.eyebrow {
   margin-bottom: 0.25rem;
   --text-opacity: 1;
   color: #2C0735;
@@ -687,8 +694,42 @@ p {
   text-transform: uppercase;
 }
 
-h1.resource-title {
-  margin-top: 2rem;
+a {
+  --text-opacity: 1;
+  color: #192BC2;
+  color: rgba(25, 43, 194, var(--text-opacity));
+  transition-duration: 500ms;
+}
+
+a:hover {
+  border-bottom-width: 1px;
+  padding-bottom: 0.25rem;
+}
+
+a:visited {
+  --text-opacity: 1;
+  color: #150578;
+  color: rgba(21, 5, 120, var(--text-opacity));
+}
+
+ul, ol {
+  list-style-position: outside;
+  margin-bottom: 0.75rem;
+  padding-left: 0.75rem;
+}
+
+ul li, ol li {
+  margin-bottom: 0.5rem;
+  padding-left: 0.5rem;
+  margin-left: 0.75rem;
+}
+
+ul {
+  list-style-type: disc;
+}
+
+ol {
+  list-style-type: decimal;
 }
 
 /*
@@ -1118,10 +1159,29 @@ Main Navigation
 
 #nav-main ul {
   display: flex;
+  list-style-type: none;
+  margin-bottom: 0;
 }
 
 #nav-main ul li {
   margin-left: 0.75rem;
+  margin-bottom: 0;
+}
+
+#nav-main ul li:hover {
+  text-decoration: none;
+}
+
+#nav-main a {
+  --text-opacity: 1;
+  color: #000;
+  color: rgba(0, 0, 0, var(--text-opacity));
+}
+
+#nav-main a:visited {
+  --text-opacity: 1;
+  color: #000;
+  color: rgba(0, 0, 0, var(--text-opacity));
 }
 
 #nav-main #nav-left {

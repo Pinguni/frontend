@@ -15,12 +15,15 @@ h1, h2, h3, h4, h5 {
 }
 h1 {
     @apply text-4xl mb-6;
+    &.resource-title {
+        @apply mt-8;
+    }
 }
 h2 {
     @apply text-4xl mb-6;
 }
 h3 {
-    @apply text-3xl;
+    @apply text-3xl mb-4 mt-6;
 }
 h4 {
     @apply text-2xl;
@@ -30,12 +33,31 @@ h5 {
 }
 
 p {
-    @apply tracking-wide leading-loose;
-}
-.eyebrow {
-    @apply mb-1 text-dark-1 text-sm font-bold uppercase;
+    @apply tracking-wide leading-loose mb-3;
+    &.eyebrow {
+        @apply mb-1 text-dark-1 text-sm font-bold uppercase;
+    }
 }
 
-h1.resource-title {
-    @apply mt-8;
+a {
+    @apply text-medium duration-500;
+    &:hover {
+        @apply border-b pb-1;
+    }
+    &:visited {
+        @apply text-dark-2;
+    }
+}
+
+ul, ol {
+    @apply list-outside mb-3 pl-3;
+    li {
+        @apply mb-2 pl-2 ml-3;
+    }
+}
+ul {
+    @apply list-disc;
+}
+ol {
+    @apply list-decimal;
 }

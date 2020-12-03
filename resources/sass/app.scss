@@ -25,9 +25,18 @@ Main Navigation
     @apply flex items-center py-2 px-8 w-full h-16 border-b border-gray-300 bg-white;
 
     ul {
-        @apply flex;
+        @apply flex list-none mb-0;
         li {
-            @apply ml-3;
+            @apply ml-3 mb-0;
+            &:hover {
+                @apply no-underline;
+            }
+        }
+    }
+    a {
+        @apply text-black;
+        &:visited {
+            @apply text-black;
         }
     }
     #nav-left {
