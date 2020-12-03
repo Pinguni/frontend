@@ -32,6 +32,9 @@ form {
             @apply place-self-end mr-4;
         }
     }
+    &.single-button-form {
+        @apply bg-auto shadow-none p-0;
+    }
 
     .checkbox {
         @apply flex;

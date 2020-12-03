@@ -40,4 +40,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * The courses that belong to the user.
+     */
+    public function courses()
+    {
+        return $this->belongsToMany('App\Models\Course', 'users_and_courses')
+                    ->withPivot('status', 'end_time')
+                    ->withTimestamps();
+    }
 }

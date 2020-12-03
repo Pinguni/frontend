@@ -856,6 +856,12 @@ form.form-laraberg button[type=submit] {
   margin-right: 1rem;
 }
 
+form.single-button-form {
+  background-size: auto;
+  box-shadow: none;
+  padding: 0;
+}
+
 form .checkbox {
   display: flex;
 }

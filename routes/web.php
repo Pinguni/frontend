@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\CoursesController;
+use App\Http\Controllers\UsersAndCoursesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,5 +30,6 @@ Route::prefix('/courses')->group(function() {
     //Route::get('/{id}/edit/{field}', [CourseController::class, 'edit'])->name('courses.edit');
 });
 Route::resource('courses', CourseController::class)->except([
-    'show'//, 'edit'
+    'show'
 ]);
+Route::post('/courses/take', [UsersAndCoursesController::class, 'store'])->name('courses.take');

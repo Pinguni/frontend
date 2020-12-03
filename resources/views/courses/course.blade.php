@@ -18,7 +18,11 @@
             <p>otpics</p>
             <p>age</p>
             <p>tags</p>
-            <button class="dark">Take This Course</button>
+            <form class="single-button-form" action={{ route('courses.take') }} method="POST">
+                @csrf
+                <input type="hidden" name="course_id" value={{ $course->id }} />
+                <button type="submit" class="dark">Take This Course</button>
+            </form>
         </div>
     </aside>
 
