@@ -995,6 +995,7 @@ Cards
   --border-opacity: 1;
   border-color: #e2e8f0;
   border-color: rgba(226, 232, 240, var(--border-opacity));
+  height: 100%;
 }
 
 .card.resource-card:hover {
@@ -1040,6 +1041,7 @@ Course Grids
   grid-template-columns: repeat(4, minmax(0, 1fr));
   grid-gap: 1rem;
   gap: 1rem;
+  grid-auto-rows: 1fr;
 }
 
 @media (max-width: 1024px) {

@@ -8,7 +8,7 @@ Cards
 .card {
     @apply rounded bg-white duration-500 overflow-hidden;
     &.resource-card {
-        @apply border border-gray-300;
+        @apply border border-gray-300 h-full;
         &:hover {
             @apply shadow-xl border-white;
         }
@@ -34,6 +34,7 @@ Course Grids
 ======================================== */
 .course-grid-wide {
     @apply grid grid-cols-4 gap-4;
+    grid-auto-rows: 1fr;
 }
 @media (max-width: $lg) {
     .course-grid-wide {
