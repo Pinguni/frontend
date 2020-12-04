@@ -31,8 +31,7 @@ Route::prefix('/dash')->group(function() {
 });
 
 Route::prefix('/courses')->group(function() {
-    Route::get('/view/{id}/{permalink}', [CoursesController::class, 'course'])->name('courses.show');
-    //Route::get('/{id}/edit/{field}', [CourseController::class, 'edit'])->name('courses.edit');
+    Route::get('/view/{id}/{slug}', [CoursesController::class, 'course'])->name('courses.show');
 });
 Route::resource('courses', CourseController::class)->except([
     'show'
