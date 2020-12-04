@@ -18,11 +18,9 @@ use App\Http\Controllers\UsersAndCoursesController;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
-
 Auth::routes();
+
+Route::get('/', [DashboardController::class, 'index']);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
