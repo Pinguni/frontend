@@ -26,6 +26,9 @@
                 </button>
                 <ul>
                     <li>
+                        <a href="{{ route('dashboard') }}">Dashboard</a>
+                    </li>
+                    <li>
                         <a href="{{ url('/') }}">Community</a>
                     </li>
                     <li>

@@ -46,7 +46,7 @@ class UsersAndCoursesController extends Controller
         $user = User::find(Auth::id());
         $user->courses()->attach($request->course_id, ['status' => 'inprogress']);
 
-        return redirect()->home();
+        return redirect()->route('dashboard');
     }
 
     /**

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\CoursesController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UsersAndCoursesController;
 
 /*
@@ -24,6 +25,10 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::prefix('/dash')->group(function() {
+    Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+});
 
 Route::prefix('/courses')->group(function() {
     Route::get('/view/{id}/{permalink}', [CoursesController::class, 'course'])->name('courses.show');
