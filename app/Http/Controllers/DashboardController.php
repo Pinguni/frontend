@@ -11,7 +11,7 @@ class DashboardController extends Controller
     public function index() 
     {
         $user = User::find(Auth::id());
-        $courses = $user->courses;
+        $courses = $user->courses()->orderBy('created_at', 'DESC')->get();
 
         return view('dash.index', [
             'courses' => $courses,
