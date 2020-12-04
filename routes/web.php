@@ -31,7 +31,19 @@ Route::prefix('/dash')->group(function() {
 Route::prefix('/courses')->group(function() {
     Route::get('/view/{id}/{slug}', [CoursesController::class, 'course'])->name('courses.show');
 });
-Route::resource('courses', CourseController::class)->except([
-    'show'
+Route::resource('courses', CourseController::class)->only([
+    'index'
 ]);
 Route::post('/courses/take', [UsersAndCoursesController::class, 'store'])->name('courses.take');
+
+
+/*
+|--------------------------------------------------------------------------
+| Admin Routes
+|--------------------------------------------------------------------------
+*/
+Route::group(['middleware' => ['admin']], function () {
+    Route::resource('courses', CourseController::class)->only([
+        'create', 'store', 'edit', 'update', 'destroy'
+    ]);
+});
