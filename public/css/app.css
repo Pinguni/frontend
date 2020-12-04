@@ -748,7 +748,9 @@ Body
 ========================================  */
 
 body {
-  background: #fafbfd;
+  --bg-opacity: 1;
+  background-color: #fafbfd;
+  background-color: rgba(250, 251, 253, var(--bg-opacity));
 }
 
 /*
@@ -934,6 +936,32 @@ input[type=text]:focus {
   color: rgba(136, 138, 251, var(--text-opacity));
 }
 
+form.single-line-form {
+  background-size: auto;
+  box-shadow: none;
+  padding-top: 0.5rem;
+  padding-bottom: 0;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+form.single-line-form > div {
+  display: flex;
+}
+
+form.single-line-form > div input[type=text] {
+  width: 100%;
+  max-width: none;
+  margin-right: 1rem;
+}
+
+form.single-line-form > div button {
+  width: 16.666667%;
+  margin-top: 0.5rem;
+  margin-bottom: 1.25rem;
+  min-width: 100px;
+}
+
 /*
 ========================================
 Buttons
@@ -1090,14 +1118,36 @@ Banner
 
 /*
 ========================================
-Course Description
+Course Description & Sections
 ======================================== */
 
 @media (min-width: 768px) {
-  .course-description {
+  .course-description,
+.course-sections {
     min-height: 400px;
     width: calc(100vw - 400px);
   }
+}
+
+.course-sections .course-sections-section {
+  padding-bottom: 0.25rem;
+  padding-top: 0.75rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  --bg-opacity: 1;
+  background-color: #f0f2f2;
+  background-color: rgba(240, 242, 242, var(--bg-opacity));
+  transition-duration: 500ms;
+}
+
+.course-sections .course-sections-section:hover {
+  --bg-opacity: 1;
+  background-color: #e0e4e5;
+  background-color: rgba(224, 228, 229, var(--bg-opacity));
+}
+
+.course-sections .course-sections-section p {
+  font-weight: 700;
 }
 
 /*

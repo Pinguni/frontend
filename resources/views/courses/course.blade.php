@@ -37,5 +37,24 @@
     <section class="course-description">
         {!! $course->description !!}
     </section>
+
+    <section class="course-sections">
+        <h2>Course Content</h2>
+        @if ($admin)
+            <form class="single-line-form" method="POST" action={{ route('courses.sections.store', ['course' => $course->id]) }}>
+                @csrf
+                <input type="hidden" name="slug" value={{ $course->slug }} />
+                <div>
+                    <input type="text" name="title" placeholder="Section Title" />
+                    <button type="submit" class="dark">Add Section</button>
+                </div>
+            </form>
+        @endif
+        @foreach ($course->sections as $section)
+            <div class="course-sections-section">
+                <p>{{ $section->title }}</p>
+            </div>
+        @endforeach
+    </section>
 </main>
 @endsection

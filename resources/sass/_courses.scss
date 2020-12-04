@@ -17,12 +17,24 @@ Banner
 
 /*
 ========================================
-Course Description
+Course Description & Sections
 ======================================== */
 @screen md {
-    .course-description {
+    .course-description,
+    .course-sections {
         min-height: 400px;
         width: calc(100vw - 400px);
+    }
+}
+.course-sections {
+    .course-sections-section {
+        @apply pb-1 pt-3 px-4 bg-steel-100 duration-500;
+        &:hover {
+            @apply bg-steel-200;
+        }
+        p {
+            @apply font-bold;
+        }
     }
 }
 

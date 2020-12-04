@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\CourseSectionController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UsersAndCoursesController;
 
@@ -44,5 +45,8 @@ Route::post('/courses/take', [UsersAndCoursesController::class, 'store'])->name(
 Route::group(['middleware' => ['admin']], function () {
     Route::resource('courses', CourseController::class)->only([
         'create', 'store', 'edit', 'update', 'destroy'
+    ]);
+    Route::resource('courses.sections', CourseSectionController::class)->only([
+        'store', 'edit', 'update', 'destroy'
     ]);
 });

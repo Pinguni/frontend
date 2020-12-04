@@ -5,15 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Course extends Model
+class CourseSection extends Model
 {
     use HasFactory;
 
     /**
-     * The sections that belong to the course.
+     * The course that the section belongs to.
      */
-    public function sections()
+    public function course()
     {
-        return $this->hasMany('App\Models\CourseSection');
+        return $this->belongsTo('App\Models\Course');
     }
 }
