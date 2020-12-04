@@ -228,6 +228,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
         'Markdown' => GrahamCampbell\Markdown\Facades\Markdown::class,
+        'Help' => App\Help::class,
     ],
 
 ];

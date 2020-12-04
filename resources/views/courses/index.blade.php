@@ -4,9 +4,11 @@
 
 @section('content')
 <main class="wide">
-    <button class="dark" onclick="window.location='{{ route('courses.create') }}'" style="margin-bottom:2rem">
-        Create
-    </button>
+    @if ($admin)
+        <button class="dark" onclick="window.location='{{ route('courses.create') }}'" style="margin-bottom:2rem">
+            Create
+        </button>
+    @endif
 
     <h1>Courses</h1>
 

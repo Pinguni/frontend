@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Help;
 use App\Models\Course;
 use Illuminate\Http\Request;
 
@@ -14,10 +15,12 @@ class CourseController extends Controller
      */
     public function index()
     {
-        $courses = Course::all()->orderBy('created_at', 'DESC')->get();
+        $courses = Course::orderBy('created_at', 'DESC')->get();
+        $admin = Help::isAdmin();
 
         return view('courses.index', [
             'courses' => $courses,
+            'admin' => $admin,
         ]);
     }
 
@@ -63,12 +66,19 @@ class CourseController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Course  $course
+     * @param  int     $id
+     * @param  string  $slug
      * @return \Illuminate\Http\Response
      */
-    public function show(Course $course)
+    public function show($id, $slug)
     {
-        //
+        $course = Course::find($id);
+        $admin = Help::isAdmin();
+
+        return view('courses.course', [
+            'course' => $course,
+            'admin' => $admin
+        ]);
     }
 
     /**

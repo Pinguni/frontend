@@ -26,9 +26,11 @@
         </div>
     </aside>
 
-    <button class="dark" onclick="window.location='{{ route('courses.edit', ['course' => $course]) }}'">
-        Edit
-    </button>
+    @if ($admin)
+        <button class="dark" onclick="window.location='{{ route('courses.edit', ['course' => $course]) }}'">
+            Edit
+        </button>
+    @endif
 
     <h1 class="resource-title">{{ $course->title }}</h1>
 

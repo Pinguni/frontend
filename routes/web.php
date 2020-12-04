@@ -3,7 +3,6 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\CourseController;
-use App\Http\Controllers\CoursesController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UsersAndCoursesController;
 
@@ -29,7 +28,7 @@ Route::prefix('/dash')->group(function() {
 });
 
 Route::prefix('/courses')->group(function() {
-    Route::get('/view/{id}/{slug}', [CoursesController::class, 'course'])->name('courses.show');
+    Route::get('/view/{id}/{slug}', [CourseController::class, 'show'])->name('courses.show');
 });
 Route::resource('courses', CourseController::class)->only([
     'index'
