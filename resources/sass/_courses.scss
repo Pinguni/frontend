@@ -28,7 +28,7 @@ Course Description & Sections
 }
 .course-sections {
     .course-sections-section {
-        @apply pb-1 pt-3 px-4 bg-steel-100 duration-500;
+        @apply pb-1 pt-3 px-4 bg-steel-100 border-0 duration-100;
         &:hover {
             @apply bg-steel-200;
         }

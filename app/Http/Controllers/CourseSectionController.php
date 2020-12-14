@@ -82,6 +82,30 @@ class CourseSectionController extends Controller
     }
 
     /**
+     * Update the order of specified sections belonging to a course.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function updateOrder(Request $request)
+    {
+        $sections = CourseSection::all();
+
+        foreach ($sections as $section) {
+            $section->timestamps = false; // To disable update_at field updation
+            $id = $section->id;
+
+            foreach ($request->order as $order) {
+                if ($order['id'] == $id) {
+                    $section->update(['sort' => $order['position']]);
+                }
+            }
+        }
+        
+        return response('Update Successfully.', 200);
+    }
+
+    /**
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\CourseSection  $courseSection

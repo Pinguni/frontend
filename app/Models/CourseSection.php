@@ -9,6 +9,8 @@ class CourseSection extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['sort'];
+
     /**
      * The course that the section belongs to.
      */

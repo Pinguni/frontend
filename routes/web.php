@@ -49,4 +49,5 @@ Route::group(['middleware' => ['admin']], function () {
     Route::resource('courses.sections', CourseSectionController::class)->only([
         'store', 'edit', 'update', 'destroy'
     ]);
+    Route::post('courses/sections/update-order', [CourseSectionController::class, 'updateOrder'])->name('courses.sections.updateOrder');
 });

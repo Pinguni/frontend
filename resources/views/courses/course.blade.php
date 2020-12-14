@@ -2,6 +2,8 @@
 
 @section('title', "$course->title")
 
+@include('layouts.jqueryui')
+
 @section('content')
 <div class="banner">
     <img class="banner-image" src="{{ $course->cover_image }}">
@@ -50,11 +52,55 @@
                 </div>
             </form>
         @endif
-        @foreach ($course->sections as $section)
-            <div class="course-sections-section">
-                <p>{{ $section->title }}</p>
-            </div>
-        @endforeach
+        <!-- 
+            Course Sections 
+        -->
+        <div id="sections">
+            @foreach ($course->sections()->orderBy('sort', 'ASC')->get() as $section)
+                <div class="course-sections-section ui-state-default" data-id={{ $section->id }}>
+                    <p>{{ $section->title }}</p>
+                </div>
+            @endforeach
+        </div>
     </section>
 </main>
+@endsection
+
+@section('scripts')
+    <script>
+        $(function() {
+            $('#sections').sortable({
+                update: function() {
+                    sendToServer()
+                }
+            });
+            $('#sections').disableSelection();
+
+            function sendToServer() {
+                var order = [];
+                $('.course-sections-section').each(function(index, element) {
+                    order.push({
+                        id: $(this).attr('data-id'),
+                        position: index + 1
+                    });
+                });
+                $.ajax({
+                    type: "POST", 
+                    dataType: "json", 
+                    url: "{{ route('courses.sections.updateOrder') }}",
+                    data: {
+                        order: order,
+                        _token: '{{csrf_token()}}'
+                    },
+                    success: function(response) {
+                        if (response.status == "success") {
+                            console.log(response);
+                        } else {
+                            console.log(response);
+                        }
+                    }
+                });
+            }
+        });
+    </script>
 @endsection

@@ -1138,7 +1138,8 @@ Course Description & Sections
   --bg-opacity: 1;
   background-color: #f0f2f2;
   background-color: rgba(240, 242, 242, var(--bg-opacity));
-  transition-duration: 500ms;
+  border-width: 0;
+  transition-duration: 100ms;
 }
 
 .course-sections .course-sections-section:hover {
