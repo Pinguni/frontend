@@ -1031,6 +1031,7 @@ Cards
   --border-opacity: 1;
   border-color: #fff;
   border-color: rgba(255, 255, 255, var(--border-opacity));
+  text-decoration: none;
 }
 
 .card .card-image {
