@@ -24,9 +24,17 @@ form {
             @apply place-self-end;
         }
     }
-    // Laraberg
+    // Inline, Laraberg
+    &.form-inline,
     &.form-laraberg {
         @apply p-0 shadow-none bg-none;
+    }
+    // Inline
+    &.form-inline {
+        @apply bg-transparent float-right;
+    }
+    // Laraberg
+    &.form-laraberg {
         p, a {
             @apply text-left;
         }

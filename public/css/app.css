@@ -843,10 +843,15 @@ form.narrow button[type=submit] {
   place-self: end;
 }
 
-form.form-laraberg {
+form.form-inline, form.form-laraberg {
   padding: 0;
   box-shadow: none;
   background-image: none;
+}
+
+form.form-inline {
+  background-color: transparent;
+  float: right;
 }
 
 form.form-laraberg p, form.form-laraberg a {
@@ -1132,7 +1137,6 @@ Course Description & Sections
 
 .course-sections .course-sections-section {
   padding-bottom: 0.25rem;
-  padding-top: 0.75rem;
   padding-left: 1rem;
   padding-right: 1rem;
   --bg-opacity: 1;
@@ -1149,7 +1153,14 @@ Course Description & Sections
 }
 
 .course-sections .course-sections-section p {
+  padding-top: 0.75rem;
   font-weight: 700;
+  display: inline-block;
+}
+
+.course-sections .course-sections-section svg {
+  float: right;
+  height: 1.25rem;
 }
 
 /*

@@ -3,6 +3,7 @@
 @section('title', "$course->title")
 
 @include('layouts.jqueryui')
+@include('layouts.feathericons')
 
 @section('content')
 <div class="banner">
@@ -59,6 +60,13 @@
             @foreach ($course->sections()->orderBy('sort', 'ASC')->get() as $section)
                 <div class="course-sections-section ui-state-default" data-id={{ $section->id }}>
                     <p>{{ $section->title }}</p>
+                    @if ($admin)
+                        <form class="form-inline" action={{ route('courses.sections.destroy', ['course' => $course->id, 'section' => $section->id]) }} method="POST">
+                            @csrf
+                            <input type="hidden" name="_method" value="DELETE" />
+                            <button type="submit"><i data-feather="trash"></i></button>
+                        </form>
+                    @endif
                 </div>
             @endforeach
         </div>
@@ -102,5 +110,8 @@
                 });
             }
         });
+    </script>
+    <script>
+        feather.replace()
     </script>
 @endsection

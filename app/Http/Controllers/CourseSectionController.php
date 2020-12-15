@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Course;
 use App\Models\CourseSection;
 use Illuminate\Http\Request;
 
@@ -108,11 +109,17 @@ class CourseSectionController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\CourseSection  $courseSection
+     * @param  int  $course
+     * @param  int  $section
      * @return \Illuminate\Http\Response
      */
-    public function destroy(CourseSection  $courseSection)
+    public function destroy($course, $section)
     {
-        //
+        CourseSection::destroy($section);
+
+        return redirect()->route('courses.show', [
+            'id' => $course,
+            'slug' => Course::find($course)->slug,
+        ]);
     }
 }
