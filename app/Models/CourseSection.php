@@ -18,4 +18,12 @@ class CourseSection extends Model
     {
         return $this->belongsTo('App\Models\Course');
     }
+
+    /**
+     * The pages that belong to the section.
+     */
+    public function pages()
+    {
+        return $this->hasMany('App\Models\CoursePage');
+    }
 }

@@ -5,6 +5,7 @@
 @include('layouts.jqueryui')
 @include('layouts.feathericons')
 
+
 @section('content')
 <div class="banner">
     <img class="banner-image" src="{{ $course->cover_image }}">
@@ -67,6 +68,11 @@
                             <button type="submit"><i data-feather="trash"></i></button>
                         </form>
                     @endif
+                    <div class="course-pages">
+                        @foreach ($section->pages()->orderBy('sort', 'ASC')->get() as $page)
+                            <p>{{ $page->title }}</p>
+                        @endforeach
+                    </div>
                 </div>
             @endforeach
         </div>
@@ -74,14 +80,30 @@
 </main>
 @endsection
 
+
 @section('scripts')
     <script>
         $(function() {
-            $('#sections').sortable({
-                update: function() {
-                    sendToServer()
-                }
-            });
+            $('#sections')
+                .accordion({
+                    collapsible: true,
+                    header: "> div > p"
+                })
+                .sortable({
+                    axis: "y",
+                    handle: "p",
+                    stop: function( event, ui ) {
+                        // IE doesn't register the blur when sorting
+                        // so trigger focusout handlers to remove .ui-state-focus
+                        ui.item.children( "p" ).triggerHandler( "focusout" );
+                
+                        // Refresh accordion to handle new order
+                        $(this).accordion( "refresh" );
+                    },
+                    update: function() {
+                        sendToServer()
+                    }
+                })
             $('#sections').disableSelection();
 
             function sendToServer() {
