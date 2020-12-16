@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\CourseSectionController;
+use App\Http\Controllers\CoursePageController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UsersAndCoursesController;
 
@@ -50,4 +51,8 @@ Route::group(['middleware' => ['admin']], function () {
         'store', 'edit', 'update', 'destroy'
     ]);
     Route::post('courses/sections/update-order', [CourseSectionController::class, 'updateOrder'])->name('courses.sections.updateOrder');
+    Route::resource('courses.sections.pages', CoursePageController::class)->only([
+        'store', 'edit', 'update', 'destroy'
+    ]);
+    Route::post('courses/sections/pages/update-order', [CoursePageController::class, 'updateOrder'])->name('courses.sections.pages.updateOrder');
 });

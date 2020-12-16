@@ -33,9 +33,18 @@ class CoursePageController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $course, $section)
     {
-        //
+        $page = new CoursePage;
+
+        $page->course_section_id = $section;
+        $page->title             = $request->title;
+        $page->save();
+
+        return redirect()->route('courses.show', [
+            'id' => $course,
+            'slug' => $request->slug,
+        ]);
     }
 
     /**
@@ -70,6 +79,30 @@ class CoursePageController extends Controller
     public function update(Request $request, CoursePage $coursePage)
     {
         //
+    }
+
+    /**
+     * Update the order of specified pages belonging to a course section.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function updateOrder(Request $request)
+    {
+        $pages = CoursePage::all();
+
+        foreach ($pages as $page) {
+            $page->timestamps = false; // To disable update_at field updation
+            $id = $page->id;
+
+            foreach ($request->order as $order) {
+                if ($order['id'] == $id) {
+                    $page->update(['sort' => $order['position']]);
+                }
+            }
+        }
+        
+        return response('Update Successfully.', 200);
     }
 
     /**

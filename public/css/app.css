@@ -948,6 +948,7 @@ form.single-line-form {
   padding-bottom: 0;
   padding-left: 1rem;
   padding-right: 1rem;
+  margin-bottom: 1rem;
 }
 
 form.single-line-form > div {
@@ -1135,32 +1136,68 @@ Course Description & Sections
   }
 }
 
-.course-sections .course-sections-section {
-  padding-bottom: 0.25rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
+.course-sections .ui-accordion-header {
+  min-height: 3rem;
+  width: 100%;
+  border-width: 0;
+  padding: 1rem;
+}
+
+.course-sections .ui-accordion-header:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  border-width: 0;
+}
+
+.course-sections .ui-accordion-header svg {
+  float: right;
+  height: 1.25rem;
+}
+
+.course-sections .ui-accordion-header button {
+  padding: 0;
+  margin: 0;
+}
+
+.course-sections .ui-state-active {
+  --bg-opacity: 1;
+  background-color: #64647c;
+  background-color: rgba(100, 100, 124, var(--bg-opacity));
+}
+
+.course-sections .course-pages {
+  transition-duration: 0ms;
+  width: 100%;
+  border-width: 0;
+  margin-bottom: 1rem;
+}
+
+.course-sections .course-pages.ui-state-default {
+  --bg-opacity: 1;
+  background-color: #fff;
+  background-color: rgba(255, 255, 255, var(--bg-opacity));
+}
+
+.course-sections .course-pages.ui-accordion-content {
+  height: auto;
+  padding-bottom: 1rem;
+}
+
+.course-sections .course-pages .course-pages-list > div {
   --bg-opacity: 1;
   background-color: #f0f2f2;
   background-color: rgba(240, 242, 242, var(--bg-opacity));
-  border-width: 0;
-  transition-duration: 100ms;
+  padding-top: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 0.25rem;
 }
 
-.course-sections .course-sections-section:hover {
+.course-sections .course-pages .course-pages-list > div:hover {
   --bg-opacity: 1;
   background-color: #e0e4e5;
   background-color: rgba(224, 228, 229, var(--bg-opacity));
-}
-
-.course-sections .course-sections-section p {
-  padding-top: 0.75rem;
-  font-weight: 700;
-  display: inline-block;
-}
-
-.course-sections .course-sections-section svg {
-  float: right;
-  height: 1.25rem;
+  border-width: 0;
 }
 
 /*

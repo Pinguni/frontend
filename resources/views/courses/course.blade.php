@@ -44,6 +44,9 @@
 
     <section class="course-sections">
         <h2>Course Content</h2>
+        <!--
+            Add Section Form
+        -->
         @if ($admin)
             <form class="single-line-form" method="POST" action={{ route('courses.sections.store', ['course' => $course->id]) }}>
                 @csrf
@@ -59,19 +62,44 @@
         -->
         <div id="sections">
             @foreach ($course->sections()->orderBy('sort', 'ASC')->get() as $section)
-                <div class="course-sections-section ui-state-default" data-id={{ $section->id }}>
-                    <p>{{ $section->title }}</p>
-                    @if ($admin)
-                        <form class="form-inline" action={{ route('courses.sections.destroy', ['course' => $course->id, 'section' => $section->id]) }} method="POST">
-                            @csrf
-                            <input type="hidden" name="_method" value="DELETE" />
-                            <button type="submit"><i data-feather="trash"></i></button>
-                        </form>
-                    @endif
-                    <div class="course-pages">
-                        @foreach ($section->pages()->orderBy('sort', 'ASC')->get() as $page)
-                            <p>{{ $page->title }}</p>
-                        @endforeach
+                <div>
+                    <!--
+                        Course Section Title
+                    -->
+                    <h3>
+                        {{ $section->title }}
+                        @if ($admin)
+                            <form class="form-inline" action={{ route('courses.sections.destroy', ['course' => $course->id, 'section' => $section->id]) }} method="POST">
+                                @csrf
+                                <input type="hidden" name="_method" value="DELETE" />
+                                <button type="submit"><i data-feather="trash"></i></button>
+                            </form>
+                        @endif
+                    </h3>
+                    <div class="course-pages ui-state-default" data-id={{ $section->id }}>
+                        <!--
+                            Add Course Page Form
+                        -->
+                        @if ($admin)
+                            <form class="single-line-form" method="POST" action={{ route('courses.sections.pages.store', ['course' => $course->id, 'section' => $section->id]) }}>
+                                @csrf
+                                <input type="hidden" name="slug" value={{ $course->slug }} />
+                                <div>
+                                    <input type="text" name="title" placeholder="Page Title" />
+                                    <button type="submit" class="dark">Add Page</button>
+                                </div>
+                            </form>
+                        @endif
+                        <!--
+                            Course Pages
+                        -->
+                        <div class="course-pages-list">
+                            @foreach ($section->pages()->orderBy('sort', 'ASC')->get() as $page)
+                                <div data-id={{ $page->id }}>
+                                    <p>{{ $page->title }}</p>
+                                </div>
+                            @endforeach
+                        </div>
                     </div>
                 </div>
             @endforeach
@@ -87,28 +115,36 @@
             $('#sections')
                 .accordion({
                     collapsible: true,
-                    header: "> div > p"
+                    header: "> div > h3"
                 })
                 .sortable({
                     axis: "y",
-                    handle: "p",
+                    handle: "h3",
                     stop: function( event, ui ) {
                         // IE doesn't register the blur when sorting
                         // so trigger focusout handlers to remove .ui-state-focus
-                        ui.item.children( "p" ).triggerHandler( "focusout" );
+                        ui.item.children("h3").triggerHandler("focusout");
                 
                         // Refresh accordion to handle new order
-                        $(this).accordion( "refresh" );
+                        $(this).accordion("refresh");
                     },
                     update: function() {
-                        sendToServer()
+                        updateSectionOrder()
                     }
                 })
             $('#sections').disableSelection();
 
-            function sendToServer() {
+            $('.course-pages-list')
+                .sortable({
+                    update: function() {
+                        updatePageOrder()
+                    }
+                })
+            $('.course-pages-list').disableSelection();
+
+            function updateSectionOrder() {
                 var order = [];
-                $('.course-sections-section').each(function(index, element) {
+                $('.course-pages').each(function(index, element) {
                     order.push({
                         id: $(this).attr('data-id'),
                         position: index + 1
@@ -118,6 +154,32 @@
                     type: "POST", 
                     dataType: "json", 
                     url: "{{ route('courses.sections.updateOrder') }}",
+                    data: {
+                        order: order,
+                        _token: '{{csrf_token()}}'
+                    },
+                    success: function(response) {
+                        if (response.status == "success") {
+                            console.log(response);
+                        } else {
+                            console.log(response);
+                        }
+                    }
+                });
+            }
+
+            function updatePageOrder() {
+                var order = [];
+                $('.course-pages-list > div').each(function(index, element) {
+                    order.push({
+                        id: $(this).attr('data-id'),
+                        position: index + 1
+                    });
+                });
+                $.ajax({
+                    type: "POST", 
+                    dataType: "json", 
+                    url: "{{ route('courses.sections.pages.updateOrder') }}",
                     data: {
                         order: order,
                         _token: '{{csrf_token()}}'

@@ -27,16 +27,38 @@ Course Description & Sections
     }
 }
 .course-sections {
-    .course-sections-section {
-        @apply pb-1 px-4 bg-steel-100 border-0 duration-100;
-        &:hover {
-            @apply bg-steel-200;
-        }
-        p {
-            @apply pt-3 font-bold inline-block;
+    .ui-accordion-header {
+        min-height: 3rem;
+        @apply w-full border-0 p-4;
+        &:focus {
+            @apply outline-none border-0;
         }
         svg {
             @apply float-right h-5;
+        }
+        button {
+            @apply p-0 m-0;
+        }
+    }
+    .ui-state-active {
+        @apply bg-steel-600;
+    }
+    .course-pages {
+        transition-duration: 0ms;
+        @apply w-full border-0 mb-4;
+        &.ui-state-default {
+            @apply bg-white;
+        }
+        &.ui-accordion-content {
+            @apply h-auto pb-4;
+        }
+        .course-pages-list {
+            & > div {
+                @apply bg-steel-100 pt-4 px-4 pb-1;
+                &:hover {
+                    @apply bg-steel-200 border-0;
+                }
+            }
         }
     }
 }
