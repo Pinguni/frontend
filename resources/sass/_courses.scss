@@ -27,21 +27,24 @@ Course Description & Sections
     }
 }
 .course-sections {
-    .ui-accordion-header {
-        min-height: 3rem;
-        @apply w-full border-0 p-4;
-        &:focus {
-            @apply outline-none border-0;
+    h3 {
+        @apply rounded-none;
+        &.ui-accordion-header {
+            min-height: 3rem;
+            @apply w-full border-0 p-4;
+            &:focus {
+                @apply outline-none border-0;
+            }
+            svg {
+                @apply float-right h-5;
+            }
+            button {
+                @apply p-0 m-0;
+            }
         }
-        svg {
-            @apply float-right h-5;
+        &.ui-state-active {
+            @apply bg-steel-600;
         }
-        button {
-            @apply p-0 m-0;
-        }
-    }
-    .ui-state-active {
-        @apply bg-steel-600;
     }
     .course-pages {
         transition-duration: 0ms;
@@ -52,7 +55,7 @@ Course Description & Sections
         &.ui-accordion-content {
             @apply h-auto pb-4;
         }
-        .course-pages-list {
+        .course-pages-item {
             & > div {
                 @apply bg-steel-100 pt-4 px-4 pb-1;
                 &:hover {

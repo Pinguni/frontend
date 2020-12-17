@@ -1136,30 +1136,34 @@ Course Description & Sections
   }
 }
 
-.course-sections .ui-accordion-header {
+.course-sections h3 {
+  border-radius: 0;
+}
+
+.course-sections h3.ui-accordion-header {
   min-height: 3rem;
   width: 100%;
   border-width: 0;
   padding: 1rem;
 }
 
-.course-sections .ui-accordion-header:focus {
+.course-sections h3.ui-accordion-header:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
   border-width: 0;
 }
 
-.course-sections .ui-accordion-header svg {
+.course-sections h3.ui-accordion-header svg {
   float: right;
   height: 1.25rem;
 }
 
-.course-sections .ui-accordion-header button {
+.course-sections h3.ui-accordion-header button {
   padding: 0;
   margin: 0;
 }
 
-.course-sections .ui-state-active {
+.course-sections h3.ui-state-active {
   --bg-opacity: 1;
   background-color: #64647c;
   background-color: rgba(100, 100, 124, var(--bg-opacity));
@@ -1183,7 +1187,7 @@ Course Description & Sections
   padding-bottom: 1rem;
 }
 
-.course-sections .course-pages .course-pages-list > div {
+.course-sections .course-pages .course-pages-item > div {
   --bg-opacity: 1;
   background-color: #f0f2f2;
   background-color: rgba(240, 242, 242, var(--bg-opacity));
@@ -1193,7 +1197,7 @@ Course Description & Sections
   padding-bottom: 0.25rem;
 }
 
-.course-sections .course-pages .course-pages-list > div:hover {
+.course-sections .course-pages .course-pages-item > div:hover {
   --bg-opacity: 1;
   background-color: #e0e4e5;
   background-color: rgba(224, 228, 229, var(--bg-opacity));

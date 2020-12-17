@@ -93,7 +93,7 @@
                         <!--
                             Course Pages
                         -->
-                        <div class="course-pages-list">
+                        <div class="course-pages-item">
                             @foreach ($section->pages()->orderBy('sort', 'ASC')->get() as $page)
                                 <div data-id={{ $page->id }}>
                                     <p>{{ $page->title }}</p>
@@ -134,13 +134,13 @@
                 })
             $('#sections').disableSelection();
 
-            $('.course-pages-list')
+            $('.course-pages-item')
                 .sortable({
                     update: function() {
                         updatePageOrder()
                     }
                 })
-            $('.course-pages-list').disableSelection();
+            $('.course-pages-item').disableSelection();
 
             function updateSectionOrder() {
                 var order = [];
@@ -170,7 +170,7 @@
 
             function updatePageOrder() {
                 var order = [];
-                $('.course-pages-list > div').each(function(index, element) {
+                $('.course-pages-item > div').each(function(index, element) {
                     order.push({
                         id: $(this).attr('data-id'),
                         position: index + 1
