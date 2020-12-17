@@ -50,10 +50,10 @@ class CoursePageController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\CoursePage  $coursePage
+     * @param  \App\Models\CoursePage  $page
      * @return \Illuminate\Http\Response
      */
-    public function show(CoursePage $coursePage)
+    public function show(CoursePage $page)
     {
         //
     }
@@ -61,24 +61,36 @@ class CoursePageController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\CoursePage  $coursePage
+     * @param  \App\Models\CoursePage  $page
      * @return \Illuminate\Http\Response
      */
-    public function edit(CoursePage $coursePage)
+    public function edit($course_id, $section_id, CoursePage $page)
     {
-        //
+        return view('courses.pages.edit', [
+            'course_id' => $course_id,
+            'section_id' => $section_id,
+            'page' => $page,
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\CoursePage  $coursePage
+     * @param  \App\Models\CoursePage  $page
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, CoursePage $coursePage)
+    public function update(Request $request, $course, $section, CoursePage $page)
     {
-        //
+        $page->title       = $request->title;
+        $page->slug        = $request->slug;
+        $page->content     = $request->content;
+        $page->status      = $request->status;
+        $page->save();
+
+        return redirect()->route('courses.pages.show', [
+            'page' => $page
+        ]);
     }
 
     /**
@@ -108,10 +120,10 @@ class CoursePageController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\CoursePage  $coursePage
+     * @param  \App\Models\CoursePage  $page
      * @return \Illuminate\Http\Response
      */
-    public function destroy(CoursePage $coursePage)
+    public function destroy(CoursePage $page)
     {
         //
     }

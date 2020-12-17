@@ -68,6 +68,9 @@
                     -->
                     <h3>
                         {{ $section->title }}
+                        <!--
+                            Delete Section
+                        -->
                         @if ($admin)
                             <form class="form-inline" action={{ route('courses.sections.destroy', ['course' => $course->id, 'section' => $section->id]) }} method="POST">
                                 @csrf
@@ -93,10 +96,18 @@
                         <!--
                             Course Pages
                         -->
-                        <div class="course-pages-item">
+                        <div class="course-pages-list">
                             @foreach ($section->pages()->orderBy('sort', 'ASC')->get() as $page)
                                 <div data-id={{ $page->id }}>
                                     <p>{{ $page->title }}</p>
+                                    <!--
+                                        Edit Page
+                                    -->
+                                    @if ($admin)
+                                        <a href={{ route('courses.sections.pages.edit', ['course' => $course->id, 'section' => $section->id, 'page' => $page->id]) }}>
+                                            <i data-feather="edit"></i>
+                                        </a>
+                                    @endif
                                 </div>
                             @endforeach
                         </div>
@@ -134,13 +145,13 @@
                 })
             $('#sections').disableSelection();
 
-            $('.course-pages-item')
+            $('.course-pages-list')
                 .sortable({
                     update: function() {
                         updatePageOrder()
                     }
                 })
-            $('.course-pages-item').disableSelection();
+            $('.course-pages-list').disableSelection();
 
             function updateSectionOrder() {
                 var order = [];
@@ -170,7 +181,7 @@
 
             function updatePageOrder() {
                 var order = [];
-                $('.course-pages-item > div').each(function(index, element) {
+                $('.course-pages-list > div').each(function(index, element) {
                     order.push({
                         id: $(this).attr('data-id'),
                         position: index + 1

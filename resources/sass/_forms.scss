@@ -82,7 +82,7 @@ input[type=text] {
 form {
     // Single Line Form
     &.single-line-form {
-        @apply bg-auto shadow-none pt-2 pb-0 px-4 mb-4;
+        @apply bg-auto shadow-none pt-2 pb-0 px-4 mb-6;
         & > div {
             @apply flex;
             input[type=text] {

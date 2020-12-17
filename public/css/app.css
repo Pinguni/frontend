@@ -948,7 +948,7 @@ form.single-line-form {
   padding-bottom: 0;
   padding-left: 1rem;
   padding-right: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 form.single-line-form > div {
@@ -1173,7 +1173,6 @@ Course Description & Sections
   transition-duration: 0ms;
   width: 100%;
   border-width: 0;
-  margin-bottom: 1rem;
 }
 
 .course-sections .course-pages.ui-state-default {
@@ -1187,7 +1186,7 @@ Course Description & Sections
   padding-bottom: 1rem;
 }
 
-.course-sections .course-pages .course-pages-item > div {
+.course-sections .course-pages .course-pages-list > div {
   --bg-opacity: 1;
   background-color: #f0f2f2;
   background-color: rgba(240, 242, 242, var(--bg-opacity));
@@ -1197,11 +1196,20 @@ Course Description & Sections
   padding-bottom: 0.25rem;
 }
 
-.course-sections .course-pages .course-pages-item > div:hover {
+.course-sections .course-pages .course-pages-list > div:hover {
   --bg-opacity: 1;
   background-color: #e0e4e5;
   background-color: rgba(224, 228, 229, var(--bg-opacity));
   border-width: 0;
+}
+
+.course-sections .course-pages .course-pages-list > div:last-child {
+  margin-bottom: 1rem;
+}
+
+.course-sections .course-pages .course-pages-list > div svg {
+  float: right;
+  height: 1.25rem;
 }
 
 /*

@@ -48,18 +48,24 @@ Course Description & Sections
     }
     .course-pages {
         transition-duration: 0ms;
-        @apply w-full border-0 mb-4;
+        @apply w-full border-0;
         &.ui-state-default {
             @apply bg-white;
         }
         &.ui-accordion-content {
             @apply h-auto pb-4;
         }
-        .course-pages-item {
+        .course-pages-list {
             & > div {
                 @apply bg-steel-100 pt-4 px-4 pb-1;
                 &:hover {
                     @apply bg-steel-200 border-0;
+                }
+                &:last-child {
+                    @apply mb-4;
+                }
+                svg {
+                    @apply float-right h-5;
                 }
             }
         }
