@@ -58,11 +58,15 @@ Course Description & Sections
         .course-pages-list {
             & > div {
                 @apply bg-steel-100 pt-4 px-4 pb-1;
+                min-height: 3.75rem;
                 &:hover {
                     @apply bg-steel-200 border-0;
                 }
                 &:last-child {
                     @apply mb-4;
+                }
+                p {
+                    @apply float-left;
                 }
                 svg {
                     @apply float-right h-5;

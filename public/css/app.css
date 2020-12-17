@@ -1194,6 +1194,7 @@ Course Description & Sections
   padding-left: 1rem;
   padding-right: 1rem;
   padding-bottom: 0.25rem;
+  min-height: 3.75rem;
 }
 
 .course-sections .course-pages .course-pages-list > div:hover {
@@ -1205,6 +1206,10 @@ Course Description & Sections
 
 .course-sections .course-pages .course-pages-list > div:last-child {
   margin-bottom: 1rem;
+}
+
+.course-sections .course-pages .course-pages-list > div p {
+  float: left;
 }
 
 .course-sections .course-pages .course-pages-list > div svg {
