@@ -9,6 +9,8 @@ class CoursePage extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['sort'];
+
     /**
      * The section that the page belongs to.
      */

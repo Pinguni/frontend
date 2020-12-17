@@ -98,7 +98,7 @@
                         -->
                         <div class="course-pages-list">
                             @foreach ($section->pages()->orderBy('sort', 'ASC')->get() as $page)
-                                <div data-id={{ $page->id }}>
+                                <div class="course-pages-list-item" data-id={{ $page->id }}>
                                     <p>{{ $page->title }}</p>
                                     <!--
                                         Edit Page
@@ -181,7 +181,7 @@
 
             function updatePageOrder() {
                 var order = [];
-                $('.course-pages-list > div').each(function(index, element) {
+                $('.course-pages-list-item').each(function(index, element) {
                     order.push({
                         id: $(this).attr('data-id'),
                         position: index + 1
