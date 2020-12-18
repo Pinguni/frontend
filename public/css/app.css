@@ -804,6 +804,23 @@ main.wide, main.moderate, main.narrow {
 
 /*
 ========================================
+Page Parts
+======================================== */
+
+.breadcrumbs {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-bottom: 1.5rem;
+  --bg-opacity: 1;
+  background-color: #f0f2f2;
+  background-color: rgba(240, 242, 242, var(--bg-opacity));
+  border-radius: 0.25rem;
+}
+
+/*
+========================================
 Forms
 ========================================  */
 
@@ -1258,6 +1275,79 @@ Course Details Sidebar
 
   .course-details-sidebar .card-image, .course-details-sidebar img {
     height: 16rem;
+  }
+}
+
+/*
+========================================
+Course Page Sidebar
+======================================== */
+
+.course-sidebar-left {
+  --bg-opacity: 1;
+  background-color: #fff;
+  background-color: rgba(255, 255, 255, var(--bg-opacity));
+  width: 100%;
+}
+
+.course-sidebar-left .course-sidebar-section .course-sidebar-section-title {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  --bg-opacity: 1;
+  background-color: #e0e4e5;
+  background-color: rgba(224, 228, 229, var(--bg-opacity));
+  font-weight: 700;
+}
+
+.course-sidebar-left .course-sidebar-section .course-sidebar-section-title.selected {
+  --text-opacity: 1;
+  color: #fff;
+  color: rgba(255, 255, 255, var(--text-opacity));
+  --bg-opacity: 1;
+  background-color: #64647c;
+  background-color: rgba(100, 100, 124, var(--bg-opacity));
+}
+
+.course-sidebar-left .course-sidebar-section .course-sidebar-pages {
+  margin-left: 1.5rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  width: 100%;
+}
+
+.course-sidebar-left .course-sidebar-section .course-sidebar-pages a {
+  --text-opacity: 1;
+  color: #000;
+  color: rgba(0, 0, 0, var(--text-opacity));
+}
+
+.course-sidebar-left .course-sidebar-section .course-sidebar-pages a:hover {
+  border-style: none;
+}
+
+.course-sidebar-left .course-sidebar-section .course-sidebar-pages a.selected {
+  font-weight: 700;
+}
+
+@media (min-width: 768px) {
+  .course-sidebar-left {
+    position: fixed;
+    height: 100vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: 275px;
+  }
+
+  .sidebar-content {
+    margin-left: 275px;
+  }
+
+  .sidebar-content main .course-page-content {
+    margin-left: 1rem;
   }
 }
 

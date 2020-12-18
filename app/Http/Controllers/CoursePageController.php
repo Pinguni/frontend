@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Help;
+use App\Models\Course;
+use App\Models\CourseSection;
 use App\Models\CoursePage;
 use Illuminate\Http\Request;
 
@@ -53,9 +56,18 @@ class CoursePageController extends Controller
      * @param  \App\Models\CoursePage  $page
      * @return \Illuminate\Http\Response
      */
-    public function show(CoursePage $page)
+    public function show(Course $course, CourseSection $section, CoursePage $page)
     {
-        //
+        $admin = Help::isAdmin();
+        $sections = $course->sections;
+
+        return view('courses.page', [
+            'admin' => $admin,
+            'course' => $course,
+            'section' => $section,
+            'sections' => $sections,
+            'page' => $page,
+        ]);
     }
 
     /**
@@ -88,8 +100,10 @@ class CoursePageController extends Controller
         $page->status      = $request->status;
         $page->save();
 
-        return redirect()->route('courses.pages.show', [
-            'page' => $page
+        return redirect()->route('courses.sections.pages.show', [
+            'course' => Course::find($course),
+            'section' => CourseSection::find($section),
+            'page' => $page,
         ]);
     }
 

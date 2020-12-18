@@ -52,7 +52,7 @@ Route::group(['middleware' => ['admin']], function () {
     ]);
     Route::post('courses/sections/update-order', [CourseSectionController::class, 'updateOrder'])->name('courses.sections.updateOrder');
     Route::resource('courses.sections.pages', CoursePageController::class)->only([
-        'store', 'edit', 'update', 'destroy'
+        'show', 'store', 'edit', 'update', 'destroy'
     ]);
     Route::post('courses/sections/pages/update-order', [CoursePageController::class, 'updateOrder'])->name('courses.sections.pages.updateOrder');
 });

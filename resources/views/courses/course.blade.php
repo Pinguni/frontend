@@ -99,9 +99,11 @@
                         <div class="course-pages-list">
                             @foreach ($section->pages()->orderBy('sort', 'ASC')->get() as $page)
                                 <div class="course-pages-list-item" data-id={{ $page->id }}>
-                                    <p>{{ $page->title }}</p>
+                                    <a href={{ route('courses.sections.pages.show', ['course' => $course, 'section' => $section, 'page' => $page]) }}>
+                                        <p>{{ $page->title }}</p>
+                                    </a>
                                     <!--
-                                        Edit Page
+                                        Edit Course Page
                                     -->
                                     @if ($admin)
                                         <a href={{ route('courses.sections.pages.edit', ['course' => $course->id, 'section' => $section->id, 'page' => $page->id]) }}>
