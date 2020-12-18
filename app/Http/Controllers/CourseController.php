@@ -59,7 +59,7 @@ class CourseController extends Controller
 
         return redirect()->route('courses.show', [
             'id' => $course->id,
-            'permalink' => $course->slug,
+            'slug' => $course->slug,
         ]);
     }
 

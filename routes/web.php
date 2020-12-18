@@ -36,6 +36,9 @@ Route::resource('courses', CourseController::class)->only([
     'index'
 ]);
 Route::post('/courses/take', [UsersAndCoursesController::class, 'store'])->name('courses.take');
+Route::resource('courses.sections.pages', CoursePageController::class)->only([
+    'show'
+]);
 
 
 /*
@@ -52,7 +55,7 @@ Route::group(['middleware' => ['admin']], function () {
     ]);
     Route::post('courses/sections/update-order', [CourseSectionController::class, 'updateOrder'])->name('courses.sections.updateOrder');
     Route::resource('courses.sections.pages', CoursePageController::class)->only([
-        'show', 'store', 'edit', 'update', 'destroy'
+        'store', 'edit', 'update', 'destroy'
     ]);
     Route::post('courses/sections/pages/update-order', [CoursePageController::class, 'updateOrder'])->name('courses.sections.pages.updateOrder');
 });
