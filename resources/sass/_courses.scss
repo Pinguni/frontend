@@ -23,8 +23,11 @@ Course Description & Sections
     .course-description,
     .course-sections {
         min-height: 400px;
-        width: calc(100vw - 400px);
+        width: calc(100vw - 600px);
     }
+}
+.course-description {
+    @apply mb-20;
 }
 .course-sections {
     h3 {
@@ -118,6 +121,9 @@ Course Page Sidebar
             &.selected {
                 @apply text-white bg-steel-600;
             }
+            p {
+                @apply mb-2;
+            }
         }
         .course-sidebar-pages {
             @apply ml-6 py-8 px-6 w-full;
@@ -145,5 +151,15 @@ Course Page Sidebar
                 @apply ml-4;
             }
         }
+    }
+}
+
+
+
+.wp-block-embed__wrapper {
+    iframe {
+        margin: 0 auto;
+        width: 600 !important;
+        height: 360 !important;
     }
 }

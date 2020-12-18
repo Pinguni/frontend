@@ -6,24 +6,24 @@ Typography
 ======================================== */
 * {
     font-family: $font-body;
-    line-height: 1.5;
-    @apply tracking-wide;
+    //line-height: 1.75;
+    @apply tracking-wide leading-loose;
 }
 
 h1, h2, h3, h4, h5 {
     @apply font-bold;
 }
 h1 {
-    @apply text-4xl mb-6;
+    @apply text-4xl mb-6 mt-2;
     &.resource-title {
         @apply mt-8;
     }
 }
 h2 {
-    @apply text-4xl mb-6;
+    @apply text-4xl mb-6 mt-2;
 }
 h3 {
-    @apply text-3xl mb-4 mt-6;
+    @apply text-3xl mb-4 mt-8;
 }
 h4 {
     @apply text-2xl;
@@ -33,7 +33,7 @@ h5 {
 }
 
 p {
-    @apply tracking-wide leading-loose mb-3;
+    @apply tracking-wide leading-loose mb-6;
     &.eyebrow {
         @apply mb-1 text-dark-1 text-sm font-bold uppercase;
     }
@@ -55,7 +55,7 @@ a.no-inherit {
 }
 
 ul, ol {
-    @apply list-outside mb-3 pl-3;
+    @apply list-outside mb-6 pl-3;
     li {
         @apply mb-2 pl-2 ml-3;
     }

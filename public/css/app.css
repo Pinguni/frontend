@@ -641,8 +641,8 @@ Typography
 
 * {
   font-family: "Nunito", sans-serif;
-  line-height: 1.5;
   letter-spacing: 0.025em;
+  line-height: 2;
 }
 
 h1, h2, h3, h4, h5 {
@@ -652,6 +652,7 @@ h1, h2, h3, h4, h5 {
 h1 {
   font-size: 2.25rem;
   margin-bottom: 1.5rem;
+  margin-top: 0.5rem;
 }
 
 h1.resource-title {
@@ -661,12 +662,13 @@ h1.resource-title {
 h2 {
   font-size: 2.25rem;
   margin-bottom: 1.5rem;
+  margin-top: 0.5rem;
 }
 
 h3 {
   font-size: 1.875rem;
   margin-bottom: 1rem;
-  margin-top: 1.5rem;
+  margin-top: 2rem;
 }
 
 h4 {
@@ -681,7 +683,7 @@ h5 {
 p {
   letter-spacing: 0.025em;
   line-height: 2;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1.5rem;
 }
 
 p.eyebrow {
@@ -719,7 +721,7 @@ a.no-inherit:hover {
 
 ul, ol {
   list-style-position: outside;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1.5rem;
   padding-left: 0.75rem;
 }
 
@@ -984,7 +986,7 @@ form.single-line-form > div input[type=text] {
 }
 
 form.single-line-form > div button {
-  width: 16.666667%;
+  width: 20%;
   margin-top: 0.5rem;
   margin-bottom: 1.25rem;
   min-width: 100px;
@@ -1153,8 +1155,12 @@ Course Description & Sections
   .course-description,
 .course-sections {
     min-height: 400px;
-    width: calc(100vw - 400px);
+    width: calc(100vw - 600px);
   }
+}
+
+.course-description {
+  margin-bottom: 5rem;
 }
 
 .course-sections h3 {
@@ -1314,6 +1320,10 @@ Course Page Sidebar
   background-color: rgba(100, 100, 124, var(--bg-opacity));
 }
 
+.course-sidebar-left .course-sidebar-section .course-sidebar-section-title p {
+  margin-bottom: 0.5rem;
+}
+
 .course-sidebar-left .course-sidebar-section .course-sidebar-pages {
   margin-left: 1.5rem;
   padding-top: 2rem;
@@ -1353,6 +1363,12 @@ Course Page Sidebar
   .sidebar-content main .course-page-content {
     margin-left: 1rem;
   }
+}
+
+.wp-block-embed__wrapper iframe {
+  margin: 0 auto;
+  width: 600 !important;
+  height: 360 !important;
 }
 
 /*

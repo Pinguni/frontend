@@ -2,6 +2,8 @@
 
 @section('title', "$page->title")
 
+@include('layouts.laraberg')
+
 @section('content')
 <!--
     Course Sidebar
@@ -47,7 +49,12 @@
                 </button>
                 <br /><br />
             @endif
-            {!! $page->content !!}
+            <div class="gutenberg__content wp-embed-responsive">
+                {!! VanOns\Laraberg\Helpers\BlockHelper::renderBlocks(
+                        VanOns\Laraberg\Helpers\EmbedHelper::renderEmbeds( $page->content )
+                    )
+                !!}
+            </div>
         </div>
     </main>
 </div>
