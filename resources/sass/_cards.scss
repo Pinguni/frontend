@@ -10,7 +10,7 @@ Cards
     &.resource-card {
         @apply border border-gray-300 h-full;
         &:hover {
-            @apply shadow-xl border-white no-underline;
+            @apply shadow-xl border-white;
         }
     }
     .card-image {

@@ -712,6 +712,11 @@ a:visited {
   color: rgba(21, 5, 120, var(--text-opacity));
 }
 
+a.no-inherit:hover {
+  padding: 0;
+  border-style: none;
+}
+
 ul, ol {
   list-style-position: outside;
   margin-bottom: 0.75rem;
@@ -1054,7 +1059,6 @@ Cards
   --border-opacity: 1;
   border-color: #fff;
   border-color: rgba(255, 255, 255, var(--border-opacity));
-  text-decoration: none;
 }
 
 .card .card-image {

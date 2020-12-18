@@ -48,6 +48,11 @@ a {
         @apply text-dark-2;
     }
 }
+a.no-inherit {
+    &:hover {
+        @apply p-0 border-none;
+    }
+}
 
 ul, ol {
     @apply list-outside mb-3 pl-3;

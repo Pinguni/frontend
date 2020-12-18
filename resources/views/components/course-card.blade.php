@@ -1,4 +1,4 @@
-<a href='{{ route('courses.show', ['id' => $course->id, 'slug' => $course->slug]) }}'>
+<a class="no-inherit" href='{{ route('courses.show', ['id' => $course->id, 'slug' => $course->slug]) }}'>
     <div class="card resource-card">
         <div class="card-image">
             <img src="{{ $course->card_image }}" />
