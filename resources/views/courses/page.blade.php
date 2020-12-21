@@ -5,6 +5,13 @@
 @include('layouts.laraberg')
 
 @section('content')
+<style>
+    #nav-main,
+    footer {
+        margin-left: 300px;
+        width: calc(100% - 300px);
+    }
+</style>
 <!--
     Course Sidebar
 -->

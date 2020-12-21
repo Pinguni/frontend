@@ -1298,6 +1298,8 @@ Course Page Sidebar
   background-color: #fff;
   background-color: rgba(255, 255, 255, var(--bg-opacity));
   width: 100%;
+  padding-bottom: 3rem;
+  margin-top: -4rem;
 }
 
 .course-sidebar-left .course-sidebar-section .course-sidebar-section-title {
@@ -1353,22 +1355,28 @@ Course Page Sidebar
     height: 100vh;
     overflow-y: scroll;
     overflow-x: hidden;
-    width: 275px;
+    width: 300px;
   }
 
   .sidebar-content {
-    margin-left: 275px;
+    margin-left: 300px;
   }
 
   .sidebar-content main .course-page-content {
-    margin-left: 1rem;
+    padding-left: 1rem;
+    margin: 0 auto;
+    width: 600;
   }
 }
 
 .wp-block-embed__wrapper iframe {
-  margin: 0 auto;
+  margin: 1rem auto;
   width: 600 !important;
   height: 360 !important;
+}
+
+.wp-block-embed__wrapper figure {
+  margin: 1rem auto;
 }
 
 /*

@@ -114,7 +114,7 @@ Course Details Sidebar
 Course Page Sidebar
 ======================================== */
 .course-sidebar-left {
-    @apply bg-white w-full;
+    @apply bg-white w-full pb-12 -mt-16;
     .course-sidebar-section {
         .course-sidebar-section-title {
             @apply py-4 px-8 bg-steel-200 font-bold;
@@ -142,13 +142,15 @@ Course Page Sidebar
 @screen md {
     .course-sidebar-left {
         @apply fixed h-screen overflow-y-scroll overflow-x-hidden;
-        width: 275px;
+        width: 300px;
     }
     .sidebar-content {
-        margin-left: 275px;
+        margin-left: 300px;
         main {
             .course-page-content {
-                @apply ml-4;
+                @apply pl-4;
+                margin: 0 auto;
+                width: 600;
             }
         }
     }
@@ -158,8 +160,11 @@ Course Page Sidebar
 
 .wp-block-embed__wrapper {
     iframe {
-        margin: 0 auto;
+        margin: 1rem auto;
         width: 600 !important;
         height: 360 !important;
+    }
+    figure {
+        margin: 1rem auto;
     }
 }
