@@ -131,7 +131,7 @@ Course Page Sidebar
         }
     }
     .course-sidebar-pages {
-        @apply ml-6 py-8 px-6 w-full border-none h-auto;
+        @apply ml-6 py-8 px-6 w-full border-none;
         a {
             @apply text-black;
             &:hover {

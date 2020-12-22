@@ -79,7 +79,8 @@
 <script>
     $(function() {
         $(".course-sidebar-left").accordion({
-            collapsible: true
+            collapsible: true,
+            heightStyle: "content"
         });
     });
 </script>
