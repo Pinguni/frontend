@@ -126,6 +126,9 @@ Course Page Sidebar
         p {
             @apply mb-2;
         }
+        span {
+            @apply float-left mt-2 mr-2;
+        }
     }
     .course-sidebar-pages {
         @apply ml-6 py-8 px-6 w-full border-none h-auto;

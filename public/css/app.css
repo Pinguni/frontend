@@ -1334,6 +1334,12 @@ Course Page Sidebar
   margin-bottom: 0.5rem;
 }
 
+.course-sidebar-left .course-sidebar-section-title span {
+  float: left;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+}
+
 .course-sidebar-left .course-sidebar-pages {
   margin-left: 1.5rem;
   padding-top: 2rem;
