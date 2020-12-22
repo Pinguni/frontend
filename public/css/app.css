@@ -1302,18 +1302,21 @@ Course Page Sidebar
   margin-top: -4rem;
 }
 
-.course-sidebar-left .course-sidebar-section .course-sidebar-section-title {
+.course-sidebar-left .course-sidebar-section-title {
   padding-top: 1rem;
   padding-bottom: 1rem;
   padding-left: 2rem;
   padding-right: 2rem;
+  margin-top: 0;
   --bg-opacity: 1;
   background-color: #e0e4e5;
   background-color: rgba(224, 228, 229, var(--bg-opacity));
   font-weight: 700;
+  border-radius: 0;
+  border-style: none;
 }
 
-.course-sidebar-left .course-sidebar-section .course-sidebar-section-title.selected {
+.course-sidebar-left .course-sidebar-section-title.selected {
   --text-opacity: 1;
   color: #fff;
   color: rgba(255, 255, 255, var(--text-opacity));
@@ -1322,30 +1325,37 @@ Course Page Sidebar
   background-color: rgba(100, 100, 124, var(--bg-opacity));
 }
 
-.course-sidebar-left .course-sidebar-section .course-sidebar-section-title p {
+.course-sidebar-left .course-sidebar-section-title:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.course-sidebar-left .course-sidebar-section-title p {
   margin-bottom: 0.5rem;
 }
 
-.course-sidebar-left .course-sidebar-section .course-sidebar-pages {
+.course-sidebar-left .course-sidebar-pages {
   margin-left: 1.5rem;
   padding-top: 2rem;
   padding-bottom: 2rem;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   width: 100%;
+  border-style: none;
+  height: auto;
 }
 
-.course-sidebar-left .course-sidebar-section .course-sidebar-pages a {
+.course-sidebar-left .course-sidebar-pages a {
   --text-opacity: 1;
   color: #000;
   color: rgba(0, 0, 0, var(--text-opacity));
 }
 
-.course-sidebar-left .course-sidebar-section .course-sidebar-pages a:hover {
+.course-sidebar-left .course-sidebar-pages a:hover {
   border-style: none;
 }
 
-.course-sidebar-left .course-sidebar-section .course-sidebar-pages a.selected {
+.course-sidebar-left .course-sidebar-pages a.selected {
   font-weight: 700;
 }
 
@@ -1355,16 +1365,30 @@ Course Page Sidebar
     height: 100vh;
     overflow-y: scroll;
     overflow-x: hidden;
-    width: 300px;
+    width: 250px;
   }
 
   .sidebar-content {
-    margin-left: 300px;
+    margin-left: 250px;
   }
 
   .sidebar-content main .course-page-content {
     padding-left: 1rem;
     margin: 0 auto;
+    width: 600;
+  }
+}
+
+@media (min-width: 1280px) {
+  .course-sidebar-left {
+    width: 320px;
+  }
+
+  .sidebar-content {
+    margin-left: 320px;
+  }
+
+  .sidebar-content main .course-page-content {
     width: 600;
   }
 }

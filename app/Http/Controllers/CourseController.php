@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Cache;
 use Help;
 use App\Models\Course;
 use Illuminate\Http\Request;
@@ -15,7 +16,12 @@ class CourseController extends Controller
      */
     public function index()
     {
-        $courses = Course::orderBy('created_at', 'DESC')->get();
+        $cacheKey = 'courses.all';
+
+        $courses = Cache::remember($cacheKey, now()->addHours(24), function() {
+            return Course::orderBy('created_at', 'DESC')->get();
+        });
+
         $admin = Help::isAdmin();
 
         return view('courses.index', [
@@ -72,11 +78,23 @@ class CourseController extends Controller
      */
     public function show($id, $slug)
     {
-        $course = Course::find($id);
+        $cacheKey = 'courses.' . $id;
+
+        $course = Cache::remember($cacheKey, now()->addHours(24), function() use($id) {
+            return Course::find($id);
+        });
+
+        $cacheKey2 = 'courses.' . $id . '.sections';
+
+        $sections = Cache::remember($cacheKey2, now()->addHours(24), function() use($course) {
+            return $course->sections()->orderBy('sort', 'ASC')->get();
+        });
+        
         $admin = Help::isAdmin();
 
         return view('courses.course', [
             'course' => $course,
+            'sections' => $sections,
             'admin' => $admin
         ]);
     }
@@ -113,6 +131,8 @@ class CourseController extends Controller
         $course->type        = $request->type;
         $course->status      = $request->status;
         $course->save();
+
+        Cache::forget("courses.$course->id");
 
         return redirect()->route('courses.show', [
             'id' => $course->id,

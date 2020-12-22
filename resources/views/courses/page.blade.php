@@ -3,13 +3,23 @@
 @section('title', "$page->title")
 
 @include('layouts.laraberg')
+@include('layouts.jqueryui')
 
 @section('content')
 <style>
-    #nav-main,
-    footer {
-        margin-left: 300px;
-        width: calc(100% - 300px);
+    @media (min-width: 768px) {
+        #nav-main,
+        footer {
+            margin-left: 250px;
+            width: calc(100% - 250px);
+        }
+    }
+    @media (min-width: 1280px) {
+        #nav-main,
+        footer {
+            margin-left: 320px;
+            width: calc(100% - 320px);
+        }
     }
 </style>
 <!--
@@ -20,24 +30,22 @@
         <!--
             Course Section
         -->
-        <div class="course-sidebar-section">
-            <div class="course-sidebar-section-title @if($section->id == $section_item->id) selected @endif">
-                <p>{{ $section_item->title }}</p>
-            </div>
-            <!--
-                Course Pages
-            -->
-            <div class="course-sidebar-pages">
-                @foreach ($section_item->pages()->orderBy('sort', 'ASC')->get() as $page_item)
-                    <a 
-                        class="@if($page->id == $page_item->id) selected @endif"
-                        href="{{ route('courses.sections.pages.show', ['course' => $course, 'section' => $section_item, 'page' => $page_item]) }}"
-                    >
-                        {{ $page_item->title }}
-                    </a>
-                    <br /><br />
-                @endforeach
-            </div>
+        <div class="course-sidebar-section-title @if($section->id == $section_item->id) selected @endif">
+            <p>{{ $section_item->title }}</p>
+        </div>
+        <!--
+            Course Pages
+        -->
+        <div class="course-sidebar-pages">
+            @foreach ($section_item->pages()->orderBy('sort', 'ASC')->get() as $page_item)
+                <a 
+                    class="@if($page->id == $page_item->id) selected @endif"
+                    href="{{ route('courses.sections.pages.show', ['course' => $course->id, 'section' => $section_item->id, 'page' => $page_item->id]) }}"
+                >
+                    {{ $page_item->title }}
+                </a>
+                <br /><br />
+            @endforeach
         </div>
     @endforeach
 </aside>
@@ -58,11 +66,21 @@
             @endif
             <div class="gutenberg__content wp-embed-responsive">
                 {!! VanOns\Laraberg\Helpers\BlockHelper::renderBlocks(
-                        VanOns\Laraberg\Helpers\EmbedHelper::renderEmbeds( $page->content )
+                        VanOns\Laraberg\Helpers\EmbedHelper::renderEmbeds($page->content)
                     )
                 !!}
             </div>
         </div>
     </main>
 </div>
+@endsection
+
+@section('scripts')
+<script>
+    $(function() {
+        $(".course-sidebar-left").accordion({
+            collapsible: true
+        });
+    });
+</script>
 @endsection

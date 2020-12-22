@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Cache;
 use Help;
 use App\Models\Course;
 use App\Models\CourseSection;
@@ -52,20 +53,42 @@ class CoursePageController extends Controller
 
     /**
      * Display the specified resource.
-     *
-     * @param  \App\Models\CoursePage  $page
+     * 
      * @return \Illuminate\Http\Response
      */
-    public function show(Course $course, CourseSection $section, CoursePage $page)
+    public function show($course1, $section1, $page1)
     {
         $admin = Help::isAdmin();
-        $sections = $course->sections;
+
+        $cacheKey = 'courses.' . $course1;
+
+        $course = Cache::remember($cacheKey, now()->addHours(24), function() use($course1) {
+            return Course::find($course1);
+        });
+
+        $cacheKey2 = $cacheKey . '.sections';
+
+        $sections = Cache::remember($cacheKey2, now()->addHours(24), function() use($course1) {
+            return CourseSection::where('course_id', $course1)->orderBy('sort', 'ASC')->get();
+        });
+
+        $cacheKey3 = $cacheKey2 . '.' . $section1;
+
+        $section = Cache::remember($cacheKey3, now()->addHours(24), function() use($section1) {
+            return CourseSection::find($section1);
+        });
+
+        $cacheKey4 = $cacheKey3 . '.pages.' . $page1;
+
+        $page = Cache::remember($cacheKey4, now()->addHours(24), function() use($page1) {
+            return CoursePage::find($page1);
+        });
 
         return view('courses.page', [
             'admin' => $admin,
             'course' => $course,
-            'section' => $section,
             'sections' => $sections,
+            'section' => $section,
             'page' => $page,
         ]);
     }
@@ -100,10 +123,12 @@ class CoursePageController extends Controller
         $page->status      = $request->status;
         $page->save();
 
+        Cache::forget("courses.$course.sections.$section.pages.$page->id");
+
         return redirect()->route('courses.sections.pages.show', [
-            'course' => Course::find($course),
-            'section' => CourseSection::find($section),
-            'page' => $page,
+            'course' => $course,
+            'section' => $section,
+            'page' => $page->id,
         ]);
     }
 

@@ -61,7 +61,7 @@
             Course Sections 
         -->
         <div id="sections">
-            @foreach ($course->sections()->orderBy('sort', 'ASC')->get() as $section)
+            @foreach ($sections as $section)
                 <div>
                     <!--
                         Course Section Title
@@ -99,7 +99,7 @@
                         <div class="course-pages-list">
                             @foreach ($section->pages()->orderBy('sort', 'ASC')->get() as $page)
                                 <div class="course-pages-list-item" data-id={{ $page->id }}>
-                                    <a href={{ route('courses.sections.pages.show', ['course' => $course, 'section' => $section, 'page' => $page]) }}>
+                                    <a href={{ route('courses.sections.pages.show', ['course' => $course->id, 'section' => $section->id, 'page' => $page->id]) }}>
                                         <p>{{ $page->title }}</p>
                                     </a>
                                     <!--

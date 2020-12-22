@@ -115,26 +115,27 @@ Course Page Sidebar
 ======================================== */
 .course-sidebar-left {
     @apply bg-white w-full pb-12 -mt-16;
-    .course-sidebar-section {
-        .course-sidebar-section-title {
-            @apply py-4 px-8 bg-steel-200 font-bold;
-            &.selected {
-                @apply text-white bg-steel-600;
-            }
-            p {
-                @apply mb-2;
-            }
+    .course-sidebar-section-title {
+        @apply py-4 px-8 mt-0 bg-steel-200 font-bold rounded-none border-none;
+        &.selected {
+            @apply text-white bg-steel-600;
         }
-        .course-sidebar-pages {
-            @apply ml-6 py-8 px-6 w-full;
-            a {
-                @apply text-black;
-                &:hover {
-                    @apply border-none;
-                }
-                &.selected {
-                    @apply font-bold;
-                }
+        &:focus {
+            @apply outline-none;
+        }
+        p {
+            @apply mb-2;
+        }
+    }
+    .course-sidebar-pages {
+        @apply ml-6 py-8 px-6 w-full border-none h-auto;
+        a {
+            @apply text-black;
+            &:hover {
+                @apply border-none;
+            }
+            &.selected {
+                @apply font-bold;
             }
         }
     }
@@ -142,14 +143,27 @@ Course Page Sidebar
 @screen md {
     .course-sidebar-left {
         @apply fixed h-screen overflow-y-scroll overflow-x-hidden;
-        width: 300px;
+        width: 250px;
     }
     .sidebar-content {
-        margin-left: 300px;
+        margin-left: 250px;
         main {
             .course-page-content {
                 @apply pl-4;
                 margin: 0 auto;
+                width: 600;
+            }
+        }
+    }
+}
+@screen xl {
+    .course-sidebar-left {
+        width: 320px;
+    }
+    .sidebar-content {
+        margin-left: 320px;
+        main {
+            .course-page-content {
                 width: 600;
             }
         }
