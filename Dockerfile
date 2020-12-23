@@ -18,10 +18,10 @@ ARG CACHE_DATE=${ARG_CACHE}
 # ADD "https://www.random.org/cgi-bin/randbyte?nbytes=10&format=h" skipcache
 
 # Clone new folder
-RUN git clone https://${GITHUB_TOKEN}@github.com/Pinguni/frontend.git
+RUN git clone https://github.com/Pinguni/frontend.git
 
 # Set working directory to pinguni
-WORKDIR pinguni
+WORKDIR frontend
 
 # Install dependencies
 RUN composer install
