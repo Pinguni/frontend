@@ -28,6 +28,9 @@ RUN composer install
 RUN npm install
 RUN npm run prod
 
+# Generate Laravel key
+CMD php artisan key:generate
+
 # Laravel cache
 CMD php artisan optimize
 
