@@ -10,11 +10,18 @@ class DashboardController extends Controller
 {
     public function index() 
     {
-        $user = User::find(Auth::id());
-        $courses = $user->courses()->orderBy('created_at', 'DESC')->get();
+        if (Auth::check())
+        {
+            $user = User::find(Auth::id());
+            $courses = $user->courses()->orderBy('created_at', 'DESC')->get();
 
-        return view('dash.index', [
-            'courses' => $courses,
-        ]);
+            return view('dash.index', [
+                'courses' => $courses,
+            ]);
+        } 
+        else 
+        {
+            return view('home');
+        }
     }
 }
