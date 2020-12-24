@@ -14,7 +14,6 @@ RUN docker-php-ext-install pdo pdo_mysql
 RUN curl -sL https://deb.nodesource.com/setup_13.x  | bash -
 RUN apt-get -y install nodejs
 
-ARG CACHE_DATE=${ARG_CACHE}
 # ADD "https://www.random.org/cgi-bin/randbyte?nbytes=10&format=h" skipcache
 
 # Clone new folder
@@ -29,9 +28,6 @@ RUN npm install
 RUN npm run prod
 
 # Laravel cache
-CMD php artisan view:cache
-CMD php artisan route:cache
-CMD php artisan config:cache
 CMD php artisan optimize
 
 # Serve app
