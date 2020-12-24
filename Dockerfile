@@ -15,7 +15,7 @@ RUN curl -sL https://deb.nodesource.com/setup_13.x  | bash -
 RUN apt-get -y install nodejs
 
 # Prevent caching
-ADD http://www.convert-unix-time.com/api?timestamp=now /tmp/bustcache
+ARG CACHE=$ARG_CACHE
 
 # Clone new folder
 RUN git clone https://github.com/Pinguni/frontend.git
