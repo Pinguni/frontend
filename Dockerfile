@@ -14,7 +14,7 @@ RUN docker-php-ext-install pdo pdo_mysql
 RUN curl -sL https://deb.nodesource.com/setup_13.x  | bash -
 RUN apt-get -y install nodejs
 
-# ADD "https://www.random.org/cgi-bin/randbyte?nbytes=10&format=h" skipcache
+ADD https://www.google.com /time.now
 
 # Clone new folder
 RUN git clone https://github.com/Pinguni/frontend.git
