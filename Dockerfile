@@ -29,7 +29,7 @@ RUN npm install
 RUN npm run prod
 
 # Laravel cache
-CMD php artisan optimize
+RUN php artisan optimize
 
 # Serve app
 CMD php artisan serve --host=0.0.0.0 --port=80
