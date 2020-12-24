@@ -10,7 +10,7 @@
     <title>@yield('title') | {{ config('app.name', 'Pinguni') }}</title>
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="/css/app.css" rel="stylesheet">
 
     @yield('head')
 </head>
