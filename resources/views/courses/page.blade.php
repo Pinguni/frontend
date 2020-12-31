@@ -26,11 +26,14 @@
     Course Sidebar
 -->
 <aside class="course-sidebar-left">
+    @php
+        $count = 0;
+    @endphp
     @foreach ($sections as $section_item)
         <!--
             Course Section
         -->
-        <div class="course-sidebar-section-title @if($section->id == $section_item->id) selected @endif">
+        <div data-id="{{ $count }}" class="course-sidebar-section-title @if($section->id == $section_item->id) selected @php $selected = $count; @endphp @endif">
             <p>{{ $section_item->title }}</p>
         </div>
         <!--
@@ -44,9 +47,11 @@
                 >
                     {{ $page_item->title }}
                 </a>
-                <br /><br />
             @endforeach
         </div>
+        @php
+            $count++;
+        @endphp
     @endforeach
 </aside>
 <!--
@@ -80,6 +85,7 @@
     $(function() {
         $(".course-sidebar-left").accordion({
             collapsible: true,
+            active: {{ $selected }},
             heightStyle: "content"
         });
     });

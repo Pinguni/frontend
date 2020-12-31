@@ -131,11 +131,11 @@ Course Page Sidebar
         }
     }
     .course-sidebar-pages {
-        @apply ml-6 py-8 px-6 w-full border-none;
+        @apply ml-6 mr-3 py-6 px-6 w-full border-none;
         a {
-            @apply text-black;
+            @apply block mb-2 py-2 px-3 rounded duration-500 text-black;
             &:hover {
-                @apply border-none;
+                @apply bg-gray-100 border-none pb-2;
             }
             &.selected {
                 @apply font-bold;

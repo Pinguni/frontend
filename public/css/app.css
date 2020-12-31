@@ -1337,8 +1337,9 @@ Course Page Sidebar
 
 .course-sidebar-left .course-sidebar-pages {
   margin-left: 1.5rem;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  margin-right: 0.75rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   width: 100%;
@@ -1346,13 +1347,25 @@ Course Page Sidebar
 }
 
 .course-sidebar-left .course-sidebar-pages a {
+  display: block;
+  margin-bottom: 0.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  border-radius: 0.25rem;
+  transition-duration: 500ms;
   --text-opacity: 1;
   color: #000;
   color: rgba(0, 0, 0, var(--text-opacity));
 }
 
 .course-sidebar-left .course-sidebar-pages a:hover {
+  --bg-opacity: 1;
+  background-color: #f7fafc;
+  background-color: rgba(247, 250, 252, var(--bg-opacity));
   border-style: none;
+  padding-bottom: 0.5rem;
 }
 
 .course-sidebar-left .course-sidebar-pages a.selected {
