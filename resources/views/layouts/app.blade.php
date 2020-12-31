@@ -25,9 +25,11 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <ul>
-                    <li>
-                        <a href="{{ route('dashboard') }}">Dashboard</a>
-                    </li>
+                    @auth
+                        <li>
+                            <a href="{{ route('dashboard') }}">Dashboard</a>
+                        </li>
+                    @endauth
                     <li>
                         <a href="{{ url('/') }}">Community</a>
                     </li>
