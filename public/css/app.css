@@ -875,6 +875,13 @@ form.form-inline {
   float: right;
 }
 
+form.form-laraberg {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  margin-top: -4rem;
+}
+
 form.form-laraberg p, form.form-laraberg a {
   text-align: left;
 }
