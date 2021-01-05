@@ -34,7 +34,7 @@
                         <a href="{{ route('courses.index') }}">Courses</a>
                     </li>
                     <li>
-                        <a href="{{ url('guides.index') }}">Guides</a>
+                        <a href="{{ route('guides.index') }}">Guides</a>
                     </li>
                     <li>
                         <a href="{{ url('/') }}">Community</a>
