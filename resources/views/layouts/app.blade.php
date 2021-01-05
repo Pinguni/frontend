@@ -31,13 +31,13 @@
                         </li>
                     @endauth
                     <li>
-                        <a href="{{ url('/') }}">Community</a>
-                    </li>
-                    <li>
-                        <a href="{{ url('/') }}">Guides</a>
-                    </li>
-                    <li>
                         <a href="{{ route('courses.index') }}">Courses</a>
+                    </li>
+                    <li>
+                        <a href="{{ url('guides.index') }}">Guides</a>
+                    </li>
+                    <li>
+                        <a href="{{ url('/') }}">Community</a>
                     </li>
                 </ul>
             </div>

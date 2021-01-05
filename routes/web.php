@@ -6,6 +6,7 @@ use App\Http\Controllers\CourseController;
 use App\Http\Controllers\CourseSectionController;
 use App\Http\Controllers\CoursePageController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\GuideController;
 use App\Http\Controllers\UsersAndCoursesController;
 
 /*
@@ -38,6 +39,10 @@ Route::resource('courses', CourseController::class)->only([
 Route::post('/courses/take', [UsersAndCoursesController::class, 'store'])->name('courses.take');
 Route::resource('courses.sections.pages', CoursePageController::class)->only([
     'show'
+]);
+
+Route::resource('guides', GuideController::class)->only([
+    'index'
 ]);
 
 
