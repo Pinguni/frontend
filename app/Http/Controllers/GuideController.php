@@ -84,8 +84,11 @@ class GuideController extends Controller
             return Guide::find($id);
         });
 
+        $admin = Help::isAdmin();
+
         return view('guides.guide', [
             'guide' => $guide,
+            'admin' => $admin,
         ]);
     }
 
