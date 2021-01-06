@@ -35,7 +35,7 @@ form {
     }
     // Laraberg
     &.form-laraberg {
-        @apply absolute w-full h-screen -mt-16;
+        @apply w-full; // absolute w-full h-screen overflow-y-scroll -mt-16;
         p, a {
             @apply text-left;
         }

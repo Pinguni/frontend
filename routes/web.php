@@ -45,7 +45,7 @@ Route::resource('guides', GuideController::class)->only([
     'index'
 ]);
 Route::prefix('/guides')->group(function() {
-    Route::get('/{id}/{slug}', [GuideController::class, 'show'])->name('guides.show');
+    Route::get('/view/{id}/{slug}', [GuideController::class, 'show'])->name('guides.show');
 });
 
 

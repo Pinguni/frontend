@@ -97,7 +97,10 @@ class GuideController extends Controller
      */
     public function edit(Guide $guide)
     {
-        //
+        return view('guides.edit', [
+            'guide' => $guide,
+            'action' => 'guides.update',
+        ]);
     }
 
     /**
@@ -109,7 +112,23 @@ class GuideController extends Controller
      */
     public function update(Request $request, Guide $guide)
     {
-        //
+        $guide->title       = $request->title;
+        $guide->slug        = $request->slug;
+        $guide->cover_image = $request->cover_image;
+        $guide->excerpt     = $request->excerpt;
+        $guide->content     = $request->content;
+        $guide->topics      = $request->topics;
+        $guide->tags        = $request->tags;
+        $guide->type        = $request->type;
+        $guide->status      = $request->status;
+        $guide->save();
+
+        Cache::forget("guides.$guide->id");
+
+        return redirect()->route('guides.show', [
+            'id' => $guide->id,
+            'slug' => $guide->slug,
+        ]);
     }
 
     /**
