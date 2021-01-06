@@ -1091,6 +1091,14 @@ Cards
   font-weight: 700;
 }
 
+.card.guide-card {
+  border-radius: 0.5rem;
+}
+
+.card.guide-card .card-image {
+  height: 6rem;
+}
+
 /*
 ========================================
 Course Grids
@@ -1421,6 +1429,16 @@ Course Page Sidebar
 
 .wp-block-embed__wrapper figure {
   margin: 1rem auto;
+}
+
+
+/*
+========================================
+Guide Grid
+======================================== */
+
+.guide-grid {
+  width: 100%;
 }
 
 /*

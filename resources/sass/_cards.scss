@@ -16,13 +16,19 @@ Cards
     .card-image {
         @apply h-40 w-full overflow-hidden;
         img {
-            @apply object-cover;
+            @apply object-cover w-full;
         }
     }
     .card-content {
         @apply py-4 px-6 w-full text-black;
         h5 {
             @apply font-bold;
+        }
+    }
+    &.guide-card {
+        @apply rounded-lg;
+        .card-image {
+            @apply h-24;
         }
     }
 }
