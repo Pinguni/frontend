@@ -69,7 +69,15 @@ class GuideController extends Controller
      */
     public function show($id, $slug)
     {
-        //
+        $cacheKey = 'guides.' . $id;
+
+        $guide = Cache::remember($cacheKey, now()->addHours(24), function() use($id) {
+            return Guide::find($id);
+        });
+
+        return view('guides.guide', [
+            'guide' => $guide,
+        ]);
     }
 
     /**

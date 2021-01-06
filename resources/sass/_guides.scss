@@ -1,6 +1,54 @@
 /*
 ========================================
+Guide Page
+======================================== */
+.guide {
+    @apply flex;
+    .guide-sidebar {
+        @apply w-full;
+    }
+    .guide-main {
+        @apply w-full rounded-xl overflow-hidden;
+        &.shadow {
+            @apply shadow-lg;
+        }
+        .guide-content {
+            @apply w-full bg-white py-8 px-12;
+        }
+    }
+    .guide-cover-image {
+        @apply h-64 w-full overflow-hidden mb-0;
+        img {
+            @apply w-full object-cover object-center;
+        }
+    }
+}
+@screen md {
+    .guide {
+        .guide-sidebar {
+            @apply w-1/3 pr-12;
+        }
+        .guide-main {
+            @apply w-2/3;
+        }
+    }
+}
+@screen lg {
+    .guide {
+        .guide-sidebar {
+            @apply w-1/4;
+        }
+        .guide-main {
+            @apply w-3/4;
+        }
+    }
+}
+
+
+/*
+========================================
 Guide Grid
 ======================================== */
 .guide-grid {
     @apply w-full;
+}

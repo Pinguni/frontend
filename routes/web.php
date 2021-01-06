@@ -44,6 +44,9 @@ Route::resource('courses.sections.pages', CoursePageController::class)->only([
 Route::resource('guides', GuideController::class)->only([
     'index'
 ]);
+Route::prefix('/guides')->group(function() {
+    Route::get('/{id}/{slug}', [GuideController::class, 'show'])->name('guides.show');
+});
 
 
 /*
