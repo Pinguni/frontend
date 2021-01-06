@@ -28,7 +28,10 @@ Cards
     &.guide-card {
         @apply rounded-lg;
         .card-image {
-            @apply h-24;
+            @apply h-32;
+        }
+        .card-content {
+            @apply pb-4;
         }
     }
 }

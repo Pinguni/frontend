@@ -16,8 +16,17 @@ class GuideController extends Controller
      */
     public function index()
     {
+        $cacheKey = 'guides.all';
+
+        $guides = Cache::remember($cacheKey, now()->addHours(24), function() {
+            return Guide::orderBy('created_at', 'DESC')->get();
+        });
+
+        $admin = Help::isAdmin();
+
         return view('guides.index', [
-            
+            'guides' => $guides,
+            'admin' => $admin,
         ]);
     }
 

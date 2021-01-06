@@ -1097,7 +1097,11 @@ Cards
 }
 
 .card.guide-card .card-image {
-  height: 6rem;
+  height: 8rem;
+}
+
+.card.guide-card .card-content {
+  padding-bottom: 1rem;
 }
 
 /*
