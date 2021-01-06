@@ -9,5 +9,10 @@
     <section>
         
     </section>
+        @if ($admin)
+            <button class="dark" onclick="window.location='{{ route('guides.create') }}'" style="margin-bottom:2rem">
+                Create New
+            </button>
+        @endif
 </main>
 @endsection

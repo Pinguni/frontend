@@ -63,4 +63,8 @@ Route::group(['middleware' => ['admin']], function () {
         'store', 'edit', 'update', 'destroy'
     ]);
     Route::post('courses/sections/pages/update-order', [CoursePageController::class, 'updateOrder'])->name('courses.sections.pages.updateOrder');
+
+    Route::resource('guides', GuideController::class)->only([
+        'create', 'store', 'edit', 'update', 'destroy'
+    ]);
 });

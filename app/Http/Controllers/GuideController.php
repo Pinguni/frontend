@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Cache;
+use Help;
 use App\Models\Guide;
 use Illuminate\Http\Request;
 
@@ -26,7 +28,9 @@ class GuideController extends Controller
      */
     public function create()
     {
-        //
+        return view('guides.create', [
+            'action' => 'guides.store',
+        ]);
     }
 
     /**
@@ -37,7 +41,24 @@ class GuideController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $guide = new Guide;
+
+        $guide->title       = $request->title;
+        $guide->slug        = $request->slug;
+        $guide->authors     = 'cathzchen';            // temporary fill
+        $guide->cover_image = $request->cover_image;
+        $guide->excerpt     = $request->excerpt;
+        $guide->content     = $request->content;
+        $guide->topics      = $request->topics;
+        $guide->tags        = $request->tags;
+        $guide->type        = $request->type;
+        $guide->status      = $request->status;
+        $guide->save();
+
+        return redirect()->route('guides.show', [
+            'id' => $guide->id,
+            'slug' => $guide->slug,
+        ]);
     }
 
     /**
@@ -46,7 +67,7 @@ class GuideController extends Controller
      * @param  \App\Models\Guide  $guide
      * @return \Illuminate\Http\Response
      */
-    public function show(Guide $guide)
+    public function show($id, $slug)
     {
         //
     }
