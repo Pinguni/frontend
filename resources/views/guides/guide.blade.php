@@ -13,7 +13,7 @@
         </div>
     </aside>
 
-    <div class="guide-main shadow">
+    <div class="guide-main outline">
         <div class="guide-cover-image">
             <img src="{{ $guide->cover_image }}" />
         </div>

@@ -9,8 +9,8 @@ Guide Page
     }
     .guide-main {
         @apply w-full rounded-xl overflow-hidden;
-        &.shadow {
-            @apply shadow-lg;
+        &.outline {
+            @apply border border-gray-300;
         }
         .guide-content {
             @apply w-full bg-white py-8 px-12;
